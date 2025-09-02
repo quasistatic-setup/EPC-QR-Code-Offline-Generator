@@ -1,0 +1,78 @@
+window.I18N = window.I18N || {};
+window.I18N.gd = {
+  paymentData: "Mion‑fhiosrachadh pàighidh",
+  advanced: "Adhartach (roghainneil)",
+  l_name: "Buannachdair (ainm)",
+  l_iban: "IBAN",
+  l_amount: "Suim ann an EUR",
+  l_unstruct: "Iomradh pàighidh",
+  l_struct: "Iomradh structaraichte",
+  h_struct: "Cleachd a‑mhàin mura h‑eil iomradh pàighidh (teacsa saor) air a thoirt seachad.",
+  l_purpose: "Còd adhbhair (roghainneil)",
+  h_purpose: "Còdan àbhaisteach ceithir‑litreach (m.e. GDDS, SALA, CHAR).",
+  l_bic: "BIC (ann an cùisean sònraichte a‑mhàin)",
+  l_b2o: "Nòta dhan urraiche",
+  l_version: "Tionndadh",
+  l_charset: "Seata charactaran",
+  h_limit: "Uallach as motha 331 bytes. Gun bhriseadh loidhne a bharrachd às dèidh an achaidh mu dheireadh.",
+  btn_gen: "Gineadh còd QR",
+  btn_ex: "Dàta eisimpleir",
+
+  save_as: "Sàbhail mar",
+  save_png: "PNG",
+  save_svg: "SVG",
+  save_jpg: "JPG",
+
+  theme_dark: "Dorch",
+  theme_light: "Solas",
+  hint_iban_ok: "Tha an IBAN coltach ri bhith dligheach.",
+  hint_iban_bad: "Chan eil an IBAN dligheach.",
+  hint_amount_fmt: "Thèid cruth a chur air gu dhà àite deicheach nuair a chruthaichear.",
+  live_checks: "Sgrùdaidhean beò:",
+  live_ok: "OK",
+  live_conflict: "Còmhstri: cleachd Iomradh structaraichte NO Iomradh pàighidh.",
+  tooltip_struct: "Cleachd iomradh creideis RF (ISO 11649). Ma tha e suidhichte, fàg Iomradh pàighidh falamh.",
+  tooltip_purpose: "Còd àbhaisteach mar GDDS (bathar), SALA (tuarastal), CHAR (carthannas). Roghainneil.",
+  totalBytes: "Byte gu h‑iòmlan:",
+  qrInfo: "Fiosrachadh QR:",
+  details: "Seall mion‑fhiosrachadh (uallach EPC)",
+  lf: "Tha briseadh loidhne air a shealltainn mar ⏎.",
+
+  placeholders: {
+    name: "m.e., Eisimpleir Earr.",
+    iban: "DE89 3704 0044 0532 0130 00",
+    amount: "12.34",
+    unstruct: "Fàirdeal 4711, Neach‑ceannach 123",
+    struct: "m.e., RF18…",
+    purpose: "m.e., GDDS",
+    bic: "mar as trice falamh san AE",
+    b2o: "roghainneil"
+  },
+  exdata: {
+    name: "Eisimpleir Earr.",
+    iban: "DE71 1102 2033 0123 4567 89",
+    amount: "12.30",
+    unstruct: "Fàirdeal 4711",
+    struct: "",
+    purpose: "",
+    bic: "",
+    b2o: ""
+  },
+  status_ok: "Chaidh còd QR a chruthachadh. Sganaich leis an aplacaid bhanca agad no sàbhail e.",
+  status_prefill: "Dàta eisimpleir air a lìonadh. Briog air Gineadh còd QR.",
+  status_noqr: "Chan eil còd QR ann fhathast.",
+  err_name: "Tha an buannachdair riatanach.",
+  err_iban: "Chan eil an IBAN dligheach.",
+  err_purpose: "Feumaidh 1–4 caractaran alfanumerach a bhith san chòd adhbhair.",
+  err_bic: "Fòrmat BIC mì‑dligheach.",
+  err_len: (bytes) => `Tha an teacsa ro fhada: tha an uallach a’ dol thairis air 331 bytes (${bytes}). Giorraich e, mas e do thoil e.`,
+  err_qrlib: "Cha deach an leabharlann QR a luchdadh. Dèan cinnteach gu bheil assets/qrcode.min.js ann agus air a luchdadh mus tèid app.js.",
+
+  footer_offline: "Tha an duilleag seo ag obair gu tur far‑loidhne. Fosgail dìreach index.html.",
+  footer_support: "Taic:",
+  footer_buy: "Buy me a coffee",
+  footer_kofi: "Ko-fi",
+  footer_gh: "GitHub"
+};
+
+

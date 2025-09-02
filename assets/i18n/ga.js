@@ -1,0 +1,78 @@
+window.I18N = window.I18N || {};
+window.I18N.ga = {
+  paymentData: "Sonraí íocaíochta",
+  advanced: "Casta (roghnach)",
+  l_name: "Faighteoir (ainm)",
+  l_iban: "IBAN",
+  l_amount: "Suim in EUR",
+  l_unstruct: "Tagairt íocaíochta",
+  l_struct: "Tagairt struchtúrtha",
+  h_struct: "Úsáid ach amháin mura bhfuil tagairt íocaíochta (téacs saor) curtha ar fáil.",
+  l_purpose: "Cód cuspóra (roghnach)",
+  h_purpose: "Códanna caighdeánacha ceithre litir (m.sh. GDDS, SALA, CHAR).",
+  l_bic: "BIC (i gcásanna speisialta amháin)",
+  l_b2o: "Nóta don ordaitheoir",
+  l_version: "Leagan",
+  l_charset: "Tacar carachtar",
+  h_limit: "Ualach uasta 331 beart. Gan briseadh líne breise tar éis an réimse deireanach.",
+  btn_gen: "Gineadh cód QR",
+  btn_ex: "Sonraí samplacha",
+
+  save_as: "Sábháil mar",
+  save_png: "PNG",
+  save_svg: "SVG",
+  save_jpg: "JPG",
+
+  theme_dark: "Dorcha",
+  theme_light: "Geal",
+  hint_iban_ok: "Is cosúil go bhfuil IBAN bailí.",
+  hint_iban_bad: "Níl IBAN bailí.",
+  hint_amount_fmt: "Formáidfear go dhá dheachúl ar ghiniúint.",
+  live_checks: "Seiceálacha beo:",
+  live_ok: "OK",
+  live_conflict: "Coimhlint: bain úsáid as Tagairt struchtúrtha NÓ Tagairt íocaíochta.",
+  tooltip_struct: "Úsáid tagairt creidiúnaí RF (ISO 11649). Má leagtar síos é, fág Tagairt íocaíochta bán.",
+  tooltip_purpose: "Cód caighdeánach cosúil le GDDS (earraí), SALA (tuilleamh), CHAR (carthanas). Roghnach.",
+  totalBytes: "Iomlán beart:",
+  qrInfo: "Eolas QR:",
+  details: "Taispeáin sonraí (ualach EPC)",
+  lf: "Taispeántar bristeacha líne mar ⏎.",
+
+  placeholders: {
+    name: "m.sh., Sampla Teo.",
+    iban: "DE89 3704 0044 0532 0130 00",
+    amount: "12.34",
+    unstruct: "Sonrasc 4711, Custaiméir 123",
+    struct: "m.sh., RF18…",
+    purpose: "m.sh., GDDS",
+    bic: "de ghnáth folamh san AE",
+    b2o: "roghnach"
+  },
+  exdata: {
+    name: "Sampla Teo.",
+    iban: "DE71 1102 2033 0123 4567 89",
+    amount: "12.30",
+    unstruct: "Sonrasc 4711",
+    struct: "",
+    purpose: "",
+    bic: "",
+    b2o: ""
+  },
+  status_ok: "Cruthaíodh cód QR. Scan le d’aip baincéireachta nó sábháil é.",
+  status_prefill: "Líonadh sonraí samplacha. Cliceáil Gineadh cód QR.",
+  status_noqr: "Níl aon chód QR fós.",
+  err_name: "Tá an faighteoir riachtanach.",
+  err_iban: "Níl IBAN bailí.",
+  err_purpose: "Caithfidh 1–4 charachtar alfa-uimhriúil a bheith sa chód cuspóra.",
+  err_bic: "Formáid BIC neamhbhailí.",
+  err_len: (bytes) => `Tá an téacs ró‑fhada: sáraíonn an t‑ualach 331 beart (${bytes}). Gearr síos, le do thoil.`,
+  err_qrlib: "Níor lódáladh an leabharlann QR. Bí cinnte go bhfuil assets/qrcode.min.js ann agus lódáiltear é roimh app.js.",
+
+  footer_offline: "Oibríonn an leathanach seo go hiomlán as líne. Níl le déanamh ach index.html a oscailt.",
+  footer_support: "Tacaíocht:",
+  footer_buy: "Buy me a coffee",
+  footer_kofi: "Ko-fi",
+  footer_gh: "GitHub"
+};
+
+

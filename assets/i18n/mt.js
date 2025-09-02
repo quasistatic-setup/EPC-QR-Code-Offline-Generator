@@ -1,0 +1,78 @@
+window.I18N = window.I18N || {};
+window.I18N.mt = {
+  paymentData: "Dettalji tal‑ħlas",
+  advanced: "Avvanzat (mhux obbligatorju)",
+  l_name: "Benefiċjarju (isem)",
+  l_iban: "IBAN",
+  l_amount: "L‑ammont f’EUR",
+  l_unstruct: "Referenza tal‑ħlas",
+  l_struct: "Referenza strutturata",
+  h_struct: "Uża biss jekk ma tingħatax referenza tal‑ħlas (test liberu).",
+  l_purpose: "Kodiċi tal‑għan (mhux obbligatorju)",
+  h_purpose: "Kodiċijiet standard ta’ erba’ ittri (eż. GDDS, SALA, CHAR).",
+  l_bic: "BIC (f’każijiet speċjali biss)",
+  l_b2o: "Nota lill‑mandant",
+  l_version: "Verżjoni",
+  l_charset: "Sett ta’ karattri",
+  h_limit: "Tagħbija massima 331 bytes. L‑ebda ksur ta’ linja żejjed wara l‑-aħħar kamp.",
+  btn_gen: "Ġenera kodiċi QR",
+  btn_ex: "Data ta’ eżempju",
+
+  save_as: "Issejvja bħala",
+  save_png: "PNG",
+  save_svg: "SVG",
+  save_jpg: "JPG",
+
+  theme_dark: "Skur",
+  theme_light: "Ċar",
+  hint_iban_ok: "L‑IBAN jidher validu.",
+  hint_iban_bad: "L‑IBAN mhux validu.",
+  hint_amount_fmt: "Se jiġi fformat għal żewġ deċimali meta jinħoloq.",
+  live_checks: "Verifiki f’ħin reali:",
+  live_ok: "OK",
+  live_conflict: "Kunflitt: uża jew Referenza strutturata JEW Referenza tal‑ħlas.",
+  tooltip_struct: "Uża r‑referenza ta’ kreditur RF (ISO 11649). Jekk issettjata, ħalli Referenza tal‑ħlas vojta.",
+  tooltip_purpose: "Kodiċi standard bħal GDDS (oġġetti), SALA (salarju), CHAR (karità). Mhux obbligatorju.",
+  totalBytes: "Total bytes:",
+  qrInfo: "Info QR:",
+  details: "Uri d‑dettalji (tagħbija EPC)",
+  lf: "Ksur ta’ linja jintwera bħala ⏎.",
+
+  placeholders: {
+    name: "eż., Eżempju Ltd.",
+    iban: "DE89 3704 0044 0532 0130 00",
+    amount: "12.34",
+    unstruct: "Fattura 4711, Klijent 123",
+    struct: "eż., RF18…",
+    purpose: "eż., GDDS",
+    bic: "ġeneralment vojt fl‑UE",
+    b2o: "mhux obbligatorju"
+  },
+  exdata: {
+    name: "Eżempju Ltd.",
+    iban: "DE71 1102 2033 0123 4567 89",
+    amount: "12.30",
+    unstruct: "Fattura 4711",
+    struct: "",
+    purpose: "",
+    bic: "",
+    b2o: ""
+  },
+  status_ok: "Ġie maħluq kodiċi QR. Skannja b’l‑app tal‑bank jew issejvja.",
+  status_prefill: "Data ta’ eżempju mimlija. Ikklikkja Ġenera kodiċi QR.",
+  status_noqr: "Għad m’hemmx kodiċi QR.",
+  err_name: "Il‑benefiċjarju huwa meħtieġ.",
+  err_iban: "L‑IBAN mhux validu.",
+  err_purpose: "Il‑kodiċi tal‑għan għandu jkun ta’ 1–4 karattri alfanumeriċi.",
+  err_bic: "Format BIC mhux validu.",
+  err_len: (bytes) => `It‑test twil wisq: it‑tagħbija taqbeż 331 bytes (${bytes}). Qassar jekk jogħġbok.`,
+  err_qrlib: "Il‑librerija QR mhix imtellgħa. Kun żgur li hemm assets/qrcode.min.js u titella’ qabel app.js.",
+
+  footer_offline: "Din il‑paġna taħdem kompletament offline. Iftaħ biss index.html.",
+  footer_support: "Appoġġ:",
+  footer_buy: "Buy me a coffee",
+  footer_kofi: "Ko-fi",
+  footer_gh: "GitHub"
+};
+
+

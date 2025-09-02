@@ -1,0 +1,78 @@
+window.I18N = window.I18N || {};
+window.I18N.cy = {
+  paymentData: "Manylion talu",
+  advanced: "Uwch (dewisol)",
+  l_name: "Derbynnydd (enw)",
+  l_iban: "IBAN",
+  l_amount: "Swm yn EUR",
+  l_unstruct: "Cyfeirnod talu",
+  l_struct: "Cyfeirnod strwythuredig",
+  h_struct: "Defnyddiwch yn unig os nad oes cyfeirnod talu (testun rhydd).",
+  l_purpose: "Cod pwrpas (dewisol)",
+  h_purpose: "Codau safonol pedwar llythyren (e.e. GDDS, SALA, CHAR).",
+  l_bic: "BIC (dim ond mewn achosion arbennig)",
+  l_b2o: "Nodyn i’r archebwr",
+  l_version: "Fersiwn",
+  l_charset: "Set nodau",
+  h_limit: "Llwyth mwyaf 331 beit. Dim torlinell ychwanegol ar ôl y maes olaf.",
+  btn_gen: "Cynhyrchu côd QR",
+  btn_ex: "Data enghreifftiol",
+
+  save_as: "Cadw fel",
+  save_png: "PNG",
+  save_svg: "SVG",
+  save_jpg: "JPG",
+
+  theme_dark: "Tywyll",
+  theme_light: "Golau",
+  hint_iban_ok: "Mae’r IBAN yn edrych yn ddilys.",
+  hint_iban_bad: "Nid yw’r IBAN yn ddilys.",
+  hint_amount_fmt: "Bydd yn cael ei fformatio i ddau le degol wrth gynhyrchu.",
+  live_checks: "Gwirio byw:",
+  live_ok: "Iawn",
+  live_conflict: "Gwrthdaro: defnyddiwch naill ai Gyfeirnod strwythuredig NEU Gyfeirnod talu.",
+  tooltip_struct: "Defnyddiwch gyfeirnod credydwr RF (ISO 11649). Os caiff ei osod, gadewch y Cyfeirnod talu yn wag.",
+  tooltip_purpose: "Cod safonol fel GDDS (nwyddau), SALA (cyflog), CHAR (elusen). Dewisol.",
+  totalBytes: "Cyfanswm beitiau:",
+  qrInfo: "Gwybodaeth QR:",
+  details: "Dangos manylion (llwyth EPC)",
+  lf: "Dangosir toriadau llinell fel ⏎.",
+
+  placeholders: {
+    name: "e.e., Enghraifft Cyf.",
+    iban: "DE89 3704 0044 0532 0130 00",
+    amount: "12.34",
+    unstruct: "Anfoneb 4711, Cwsmer 123",
+    struct: "e.e., RF18…",
+    purpose: "e.e., GDDS",
+    bic: "fel arfer yn wag yn yr UE",
+    b2o: "dewisol"
+  },
+  exdata: {
+    name: "Enghraifft Cyf.",
+    iban: "DE71 1102 2033 0123 4567 89",
+    amount: "12.30",
+    unstruct: "Anfoneb 4711",
+    struct: "",
+    purpose: "",
+    bic: "",
+    b2o: ""
+  },
+  status_ok: "Crëwyd côd QR. Sganiwch gyda’ch ap bancio neu arbedwch.",
+  status_prefill: "Llenwyd data enghreifftiol. Cliciwch Cynhyrchu côd QR.",
+  status_noqr: "Nid oes côd QR eto.",
+  err_name: "Mae’r derbynnydd yn ofynnol.",
+  err_iban: "Nid yw’r IBAN yn ddilys.",
+  err_purpose: "Rhaid i god pwrpas fod â 1–4 nod alffaniwmerig.",
+  err_bic: "Fformat BIC annilys.",
+  err_len: (bytes) => `Mae’r testun yn rhy hir: mae’r llwyth yn fwy na 331 beit (${bytes}). Torrwch i lawr, os gwelwch yn dda.`,
+  err_qrlib: "Ni lwythwyd y llyfrgell QR. Gwnewch yn siŵr bod assets/qrcode.min.js yn bodoli ac yn cael ei lwytho cyn app.js.",
+
+  footer_offline: "Mae’r dudalen hon yn gweithio’n llawn all-lein. Agorwch index.html yn unig.",
+  footer_support: "Cefnogaeth:",
+  footer_buy: "Buy me a coffee",
+  footer_kofi: "Ko-fi",
+  footer_gh: "GitHub"
+};
+
+
