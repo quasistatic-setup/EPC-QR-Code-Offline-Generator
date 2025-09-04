@@ -703,11 +703,6 @@ document.getElementById('themeToggle').addEventListener('click', ()=>{
   setTheme(current === 'dark' ? 'light' : 'dark');
 });
 
-// Language dropdown (defensive duplicate of handler in populateLangSelect)
-document.getElementById('lang-select').addEventListener('change', async (e)=>{
-  await maybeLoadAndApply(e.target.value);
-});
-
 // ---------- Init ----------
 (function init(){
   ensureI18N();
