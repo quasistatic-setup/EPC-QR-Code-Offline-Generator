@@ -1,236 +1,209 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>EPC QR Code Offline Generator</title>
-<style>
-  :root{
-    --fg:#0f172a; --bg:#f8fafc; --muted:#64748b; --accent:#2563eb; --ok:#065f46; --err:#b91c1c; --border:#e2e8f0; --card:#fff; --codebg:#0b1020; --codefg:#e5e7eb;
-  }
-  [data-theme="dark"]{
-    --fg:#e5e7eb; --bg:#0b1220; --muted:#94a3b8; --accent:#3b82f6; --ok:#34d399; --err:#f87171; --border:#1f2937; --card:#0f172a; --codebg:#0b1020; --codefg:#e5e7eb;
-  }
-  * { box-sizing:border-box; }
-  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; color:var(--fg); background:var(--bg); margin:0; }
-  header { padding:14px 18px; border-bottom:1px solid var(--border); background:var(--card); position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; gap:12px; }
-  h1 { margin:0; font-size:18px; }
-  .bar { display:flex; gap:12px; align-items:center; }
-  .langselect, .themebtn { padding:8px 10px; border:1px solid var(--border); border-radius:10px; background:var(--card); color:var(--fg); font-weight:600; font-size:13px; cursor:pointer; }
-  .themebtn { display:inline-flex; align-items:center; gap:8px; }
-  main { display:grid; grid-template-columns:1.1fr 0.9fr; gap:24px; padding:24px; max-width:1100px; margin:auto; }
-  @media (max-width:900px){ main{ grid-template-columns:1fr; } }
-  .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; }
-  .section-title { margin:4px 0 12px; font-size:16px; }
-  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .grid1 { display:grid; gap:12px; }
-  label { display:block; font-weight:600; }
-  .label-row{
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    gap:8px;
-    margin-bottom:6px;
-    min-height:40px; /* sorgt für bündige Inputs */
-    line-height:1.2;
-  }
-  @media (max-width:900px){ .label-row{ min-height:24px; } }
-  input, select { width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:10px; font:inherit; background:#fff; color:#0f172a; }
-  [data-theme="dark"] input, [data-theme="dark"] select { background:#0b1a2a; color:#e5e7eb; border-color:#334155; }
-  .hint { color:var(--muted); font-size:12px; display:block; margin-top:6px; }
-  .actions { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:12px; }
-  button { padding:10px 14px; border-radius:10px; border:1px solid #c7d2fe; background:#eef2ff; color:#1e3a8a; font-weight:700; cursor:pointer; }
-  [data-theme="dark"] button { background:#172554; color:#c7d2fe; border-color:#1d4ed8; }
-  button.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
-  button:disabled { opacity:0.5; cursor:not-allowed; }
-  #qrbox { display:flex; flex-direction:column; gap:12px; align-items:center; }
-  #payload { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space:pre-wrap; background:var(--codebg); color:var(--codefg); border-radius:10px; padding:12px; font-size:12px; width:100%; overflow:auto; }
-  .kv { display:grid; grid-template-columns:160px 1fr; gap:8px 12px; width:100%; font-size:13px; }
-  .status { font-size:13px; }
-  .ok { color:var(--ok); } .err{ color:var(--err); } .warn{ color:#b45309; }
-  details > summary { cursor:pointer; user-select:none; padding:8px 0; font-weight:700; }
-  .footer { padding:14px 20px; color:var(--muted); font-size:13px; text-align:center; border-top:1px solid var(--border); background:var(--card); }
-  .footer a { color:#3b82f6; text-decoration:none; margin:0 8px; }
-
-  /* Valid/invalid highlights */
-  .is-valid { border-color:#10b981 !important; box-shadow:0 0 0 3px rgba(16,185,129,.15); }
-  .is-invalid { border-color:#ef4444 !important; box-shadow:0 0 0 3px rgba(239,68,68,.35) !important; outline:0 !important; }
-
-  /* Fokus-Style nur wenn nicht invalid */
-  input:focus:not(.is-invalid),
-  select:focus:not(.is-invalid),
-  textarea:focus:not(.is-invalid) {
-    border-color:#6366f1;
-    box-shadow:0 0 0 3px rgba(99,102,241,.25);
-    outline:0;
-  }
-
-  /* Save-as split button */
-  .split { position:relative; display:inline-flex; }
-  .split > button { border-top-right-radius:0; border-bottom-right-radius:0; }
-  .split > .caret { border-left:none; border-top-left-radius:0; border-bottom-left-radius:0; width:40px; display:flex; align-items:center; justify-content:center; }
-  .menu { position:absolute; top:100%; left:0; margin-top:4px; min-width:180px; background:var(--card); border:1px solid var(--border); border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.18); display:none; z-index:20; }
-  .menu.open { display:block; }
-  .menu button { display:block; width:100%; text-align:left; background:transparent; border:none; padding:10px 12px; color:var(--fg); }
-  .menu button:hover { background:rgba(148,163,184,.15); }
-  .menu button:disabled { opacity:.5; cursor:not-allowed; }
-
-  .qmark { display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:#e2e8f0; color:#0f172a; font-weight:800; cursor:help; }
-  [data-theme="dark"] .qmark { background:#334155; color:#e5e7eb; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EPC QR Code Offline Generator</title>
+  <style>
+    :root{
+      --fg:#0f172a; --bg:#f8fafc; --muted:#64748b; --accent:#2563eb; --ok:#065f46; --err:#b91c1c; --border:#e2e8f0; --card:#fff; --codebg:#0b1020; --codefg:#e5e7eb;
+    }
+    [data-theme="dark"]{
+      --fg:#e5e7eb; --bg:#0b1220; --muted:#94a3b8; --accent:#3b82f6; --ok:#34d399; --err:#f87171; --border:#1f2937; --card:#0f172a; --codebg:#0b1020; --codefg:#e5e7eb;
+    }
+    * { box-sizing:border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; color:var(--fg); background:var(--bg); margin:0; }
+    header { padding:14px 18px; border-bottom:1px solid var(--border); background:var(--card); position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    h1 { margin:0; font-size:18px; }
+    .bar { display:flex; gap:12px; align-items:center; }
+    .langselect, .themebtn { padding:8px 10px; border:1px solid var(--border); border-radius:10px; background:var(--card); color:var(--fg); font-weight:600; font-size:13px; cursor:pointer; }
+    .themebtn { display:inline-flex; align-items:center; gap:8px; }
+    main { display:grid; grid-template-columns:1.1fr 0.9fr; gap:24px; padding:24px; max-width:1100px; margin:auto; }
+    @media (max-width:900px){ main{ grid-template-columns:1fr; } }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; }
+    .section-title { margin:4px 0 12px; font-size:16px; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .grid1 { display:grid; gap:12px; }
+    label { display:block; font-weight:600; }
+    .label-row{ display:flex; align-items:center; gap:8px; margin-bottom:6px; min-height:40px; line-height:1.2; }
+    @media (max-width:900px){ .label-row{ min-height:24px; } }
+    input, select { width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:10px; font:inherit; background:#fff; color:#0f172a; }
+    [data-theme="dark"] input, [data-theme="dark"] select { background:#0b1a2a; color:#e5e7eb; border-color:#334155; }
+    .hint { color:var(--muted); font-size:12px; display:block; margin-top:6px; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:12px; }
+    button { padding:10px 14px; border-radius:10px; border:1px solid #c7d2fe; background:#eef2ff; color:#1e3a8a; font-weight:700; cursor:pointer; }
+    [data-theme="dark"] button { background:#172554; color:#c7d2fe; border-color:#1d4ed8; }
+    button.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+    button:disabled { opacity:0.5; cursor:not-allowed; }
+    #qrbox { display:flex; flex-direction:column; gap:12px; align-items:center; }
+    #payload { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space:pre-wrap; background:var(--codebg); color:var(--codefg); border-radius:10px; padding:12px; font-size:12px; width:100%; overflow:auto; }
+    .kv { display:grid; grid-template-columns:160px 1fr; gap:8px 12px; width:100%; font-size:13px; }
+    .status { font-size:13px; }
+    .ok { color:var(--ok); } .err{ color:var(--err); } .warn{ color:#b45309; }
+    details > summary { cursor:pointer; user-select:none; padding:8px 0; font-weight:700; }
+    .footer { padding:14px 20px; color:var(--muted); font-size:13px; text-align:center; border-top:1px solid var(--border); background:var(--card); }
+    .footer a { color:#3b82f6; text-decoration:none; margin:0 8px; }
+    .is-valid { border-color:#10b981 !important; box-shadow:0 0 0 3px rgba(16,185,129,.15); }
+    .is-invalid { border-color:#ef4444 !important; box-shadow:0 0 0 3px rgba(239,68,68,.35) !important; outline:0 !important; }
+    input:focus:not(.is-invalid), select:focus:not(.is-invalid), textarea:focus:not(.is-invalid) { border-color:#6366f1; box-shadow:0 0 0 3px rgba(99,102,241,.25); outline:0; }
+    .split { position:relative; display:inline-flex; }
+    .split > button { border-top-right-radius:0; border-bottom-right-radius:0; }
+    .split > .caret { border-left:none; border-top-left-radius:0; border-bottom-left-radius:0; width:40px; display:flex; align-items:center; justify-content:center; }
+    .menu { position:absolute; top:100%; left:0; margin-top:4px; min-width:180px; background:var(--card); border:1px solid var(--border); border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.18); display:none; z-index:20; }
+    .menu.open { display:block; }
+  </style>
 </head>
 <body>
-<header>
-  <h1 id="t_title">EPC QR Code Offline Generator</h1>
-  <div class="bar">
-    <button id="themeToggle" class="themebtn" type="button">🌙 Dark</button>
-    <select id="lang-select" class="langselect" title="Select language"></select>
-  </div>
-</header>
-
-<main>
-  <!-- Left: inputs -->
-  <section class="card">
-    <h2 class="section-title" id="t_paymentData">Payment details</h2>
-    <div class="grid2">
-      <label id="l_name">
-        <div class="label-row"><span class="title">Recipient (name)</span></div>
-        <input id="name" maxlength="70" placeholder="e.g., Example GmbH" />
-      </label>
-      <label id="l_iban">
-        <div class="label-row"><span class="title">IBAN</span></div>
-        <input id="iban" maxlength="34" placeholder="DE89 3704 0044 0532 0130 00"
-               pattern="^[A-Z]{2}[0-9]{2}[A-Z0-9 ]{0,30}$" title="Starts with country code + 2 digits; letters/digits, spaces allowed"
-               autocapitalize="characters" inputmode="text" aria-describedby="ibanHint" />
-        <span class="hint" id="ibanHint"></span>
-      </label>
+  <header>
+    <h1>EPC QR Code Offline Generator</h1>
+    <div class="bar">
+      <select id="lang" class="langselect"></select>
+      <button id="themeToggle" class="themebtn" type="button">Dark</button>
     </div>
+  </header>
 
-    <div class="grid2" style="margin-top:12px;">
-      <label id="l_amount">
-        <div class="label-row"><span class="title">Amount in EUR</span></div>
-        <input id="amount" inputmode="decimal" pattern="[0-9., ]*" autocomplete="off" spellcheck="false" placeholder="12.34" aria-describedby="amountHint" />
-        <span class="hint" id="amountHint"></span>
-      </label>
-      <label id="l_unstruct">
-        <div class="label-row"><span class="title">Payment reference</span></div>
-        <input id="rem_unstruct" maxlength="140" placeholder="Invoice 4711, Customer 123" />
-      </label>
-    </div>
+  <main>
+    <section class="card">
+      <div class="section-title" id="t_paymentData">Payment details</div>
 
-    <details style="margin-top:8px;">
-      <summary id="t_advanced">Advanced (optional)</summary>
-      <div class="grid1" style="margin-top:8px;">
-        <div class="grid2">
-          <label id="l_struct">
-            <div class="label-row">
-              <span class="title">Structured reference</span>
-              <span class="qmark" id="qm_struct" title="">?</span>
-            </div>
-            <input id="rem_struct" maxlength="35" placeholder="e.g., RF18…" />
-            <span class="hint" id="h_struct">Use only if no payment reference (free text) is provided.</span>
-          </label>
+      <div class="grid2">
+        <label id="l_name">
+          <div class="label-row"><span class="title">Recipient (name)</span></div>
+          <input id="name" maxlength="70" placeholder="e.g., Example GmbH" />
+        </label>
 
-          <label id="l_purpose">
-            <div class="label-row">
-              <span class="title">Purpose code (optional)</span>
-              <span class="qmark" id="qm_purpose" title="">?</span>
-            </div>
-            <input id="purpose" maxlength="4" placeholder="e.g., GDDS" />
-            <span class="hint" id="h_purpose">Standardized four-letter codes (e.g., GDDS, SALA, CHAR).</span>
-          </label>
-        </div>
-
-        <div class="grid2">
-          <label id="l_bic">
-            <div class="label-row"><span class="title">BIC (only in special cases)</span></div>
-            <input id="bic" maxlength="11" placeholder="usually empty in EU"
-                   pattern="[A-Z0-9]{8}([A-Z0-9]{3})?" title="8 or 11 uppercase letters/digits"
-                   autocapitalize="characters" />
-          </label>
-          <label id="l_b2o">
-            <div class="label-row"><span class="title">Note to originator</span></div>
-            <input id="b2o" maxlength="70" placeholder="optional" />
-          </label>
-        </div>
-
-        <div class="grid2">
-          <label id="l_version">
-            <div class="label-row"><span class="title">Version</span></div>
-            <select id="version">
-              <option value="001" selected>001 (standard)</option>
-              <option value="002">002</option>
-            </select>
-          </label>
-          <label id="l_charset">
-            <div class="label-row"><span class="title">Character set</span></div>
-            <select id="charset">
-              <option value="1" selected>1 (UTF-8)</option>
-              <option value="2">2 (ISO-8859-1)</option>
-              <option value="3">3 (ISO-8859-2)</option>
-              <option value="4">4 (ISO-8859-4)</option>
-              <option value="5">5 (ISO-8859-5)</option>
-              <option value="6">6 (ISO-8859-7)</option>
-              <option value="7">7 (ISO-8859-10)</option>
-              <option value="8">8 (ISO-8859-15)</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="hint" id="h_limit">Maximum payload 331 bytes. No extra line break after the last field.</div>
+        <label id="l_iban">
+          <div class="label-row"><span class="title">IBAN</span></div>
+          <input id="iban" maxlength="34" placeholder="DE89 3704 0044 0532 0130 00"
+                 pattern="^[A-Z]{2}[0-9]{2}[A-Z0-9 ]{0,30}$" title="Starts with country code + 2 digits; letters/digits, spaces allowed"
+                 autocapitalize="characters" inputmode="text" aria-describedby="ibanHint" />
+          <span class="hint" id="ibanHint"></span>
+        </label>
       </div>
-    </details>
 
-    <div class="actions">
-      <button type="button" class="primary" id="gen">Generate QR code</button>
+      <div class="grid2" style="margin-top:12px;">
+        <label id="l_amount">
+          <div class="label-row"><span class="title">Amount in EUR</span></div>
+          <input id="amount" inputmode="decimal" pattern="[0-9., ]*" autocomplete="off" spellcheck="false" placeholder="12.34" aria-describedby="amountHint" />
+          <span class="hint" id="amountHint"></span>
+        </label>
+        <label id="l_unstruct">
+          <div class="label-row"><span class="title">Payment reference</span></div>
+          <input id="rem_unstruct" maxlength="140" placeholder="Invoice 4711, Customer 123" />
+        </label>
+      </div>
 
-      <!-- Save-as split button -->
-      <span class="split" id="save-split">
-        <button type="button" id="saveBtn" disabled>Save as</button>
-        <button type="button" class="caret" id="saveCaret" aria-haspopup="menu" aria-expanded="false" disabled>▾</button>
-        <div class="menu" id="saveMenu" role="menu" aria-labelledby="saveBtn">
-          <button type="button" id="savePNG" role="menuitem">PNG</button>
-          <button type="button" id="saveSVG" role="menuitem">SVG</button>
-          <button type="button" id="saveJPG" role="menuitem">JPG</button>
+      <details style="margin-top:8px;">
+        <summary id="t_advanced">Advanced (optional)</summary>
+        <div class="grid1" style="margin-top:8px;">
+          <div class="grid2">
+            <label id="l_struct">
+              <div class="label-row">
+                <span class="title">Structured reference</span>
+                <span class="qmark" id="qm_struct" title="">?</span>
+              </div>
+              <input id="rem_struct" maxlength="35" placeholder="e.g., RF18XXXX" />
+              <span class="hint" id="h_struct">Use only if no payment reference (free text) is provided.</span>
+            </label>
+
+            <label id="l_purpose">
+              <div class="label-row">
+                <span class="title">Purpose code (optional)</span>
+                <span class="qmark" id="qm_purpose" title="">?</span>
+              </div>
+              <input id="purpose" maxlength="4" placeholder="e.g., GDDS" />
+              <span class="hint" id="h_purpose">Standardized four-letter codes (e.g., GDDS, SALA, CHAR).</span>
+            </label>
+          </div>
+
+          <div class="grid2">
+            <label id="l_bic">
+              <div class="label-row"><span class="title">BIC (only in special cases)</span></div>
+              <input id="bic" maxlength="11" placeholder="usually empty in EU"
+                     pattern="[A-Z0-9]{8}([A-Z0-9]{3})?" title="8 or 11 uppercase letters/digits"
+                     autocapitalize="characters" />
+            </label>
+            <label id="l_b2o">
+              <div class="label-row"><span class="title">Note to originator</span></div>
+              <input id="b2o" maxlength="70" placeholder="optional" />
+            </label>
+          </div>
+
+          <div class="grid2">
+            <label id="l_version">
+              <div class="label-row"><span class="title">Version</span></div>
+              <select id="version">
+                <option value="001" selected>001 (standard)</option>
+                <option value="002">002</option>
+              </select>
+            </label>
+            <label id="l_charset">
+              <div class="label-row"><span class="title">Character set</span></div>
+              <select id="charset">
+                <option value="1" selected>1 (UTF-8)</option>
+                <option value="2">2 (ISO-8859-1)</option>
+                <option value="3">3 (ISO-8859-2)</option>
+                <option value="4">4 (ISO-8859-4)</option>
+                <option value="5">5 (ISO-8859-5)</option>
+                <option value="6">6 (ISO-8859-7)</option>
+                <option value="7">7 (ISO-8859-10)</option>
+                <option value="8">8 (ISO-8859-15)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="hint" id="h_limit">Maximum payload 331 bytes. No extra line break after the last field.</div>
         </div>
-      </span>
+      </details>
+
+      <div class="actions">
+        <button type="button" class="primary" id="gen">Generate QR code</button>
+
+        <span class="split" id="save-split">
+          <button type="button" id="saveBtn" disabled>Save as</button>
+          <button type="button" class="caret" id="saveCaret" aria-haspopup="menu" aria-expanded="false" aria-label="Open save format menu" disabled>v</button>
+          <div class="menu" id="saveMenu" role="menu" aria-labelledby="saveBtn">
+            <button type="button" id="savePNG" role="menuitem">PNG</button>
+            <button type="button" id="saveSVG" role="menuitem">SVG</button>
+            <button type="button" id="saveJPG" role="menuitem">JPG</button>
+          </div>
+        </span>
 
         <button type="button" id="ex">Example data</button>
         <span id="status" class="status" role="status" aria-live="polite"></span>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- Right: output -->
-  <section class="card" id="qrbox">
-    <div id="qrcanvas" aria-label="QR code preview"></div>
-    <div class="kv">
-      <div id="t_totalBytes"><strong>Total bytes:</strong></div><div id="bytes">–</div>
-      <div id="t_qrInfo"><strong>QR info:</strong></div><div id="qrmeta">ECL=M, 300×300</div>
-      <div id="t_liveValidity"><strong>Live checks:</strong></div><div id="liveInfo">–</div>
-    </div>
+    <section class="card" id="qrbox">
+      <div id="qrcanvas" aria-label="QR code preview"></div>
+      <div class="kv">
+        <div id="t_totalBytes"><strong>Total bytes:</strong></div><div id="bytes"></div>
+        <div id="t_qrInfo"><strong>QR info:</strong></div><div id="qrmeta">ECL=M, 300x300</div>
+        <div id="t_liveValidity"><strong>Live checks:</strong></div><div id="liveInfo"></div>
+      </div>
 
-    <details style="width:100%;">
-      <summary id="t_details">Show details (EPC payload)</summary>
-      <div class="hint" style="margin-top:8px;" id="t_lf">Line breaks are shown as ⏎.</div>
-      <pre id="payload"></pre>
-    </details>
-  </section>
-</main>
+      <details style="width:100%;">
+        <summary id="t_details">Show details (EPC payload)</summary>
+        <div class="hint" style="margin-top:8px;" id="t_lf">Line breaks are shown as \n.</div>
+        <pre id="payload"></pre>
+      </details>
+    </section>
+  </main>
 
-<div class="footer">
-  <span id="f_offline">This page works fully offline. Just open <em>index.html</em>.</span><br />
-  <span>
-    <span id="f_support">Support:</span> ☕
-    <a href="https://buymeacoffee.com/quasistatic" target="_blank" rel="noopener"><span id="f_buy">☕ Buy me a coffee</span></a>
-    <a href="https://ko-fi.com/quasistatic" target="_blank" rel="noopener"><span id="f_kofi">❤️ Ko-fi</span></a>
-    ·
-    <a href="https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator" target="_blank" rel="noopener"><span id="f_gh">🌐 GitHub</span></a>
-  </span>
-</div>
+  <div class="footer">
+    <span id="f_offline">This page works fully offline. Just open <em>index.html</em>.</span><br />
+    <span>
+      <span id="f_support">Support:</span>
+      <a href="https://buymeacoffee.com/quasistatic" target="_blank" rel="noopener"><span id="f_buy">Buy me a coffee</span></a>
+      <a href="https://ko-fi.com/quasistatic" target="_blank" rel="noopener"><span id="f_kofi">Ko-fi</span></a>
+      <a href="https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator" target="_blank" rel="noopener"><span id="f_gh">GitHub</span></a>
+    </span>
+  </div>
 
-<!-- Load order: QR lib -> i18n core (EN+DE) -> app logic -->
-<script src="./assets/qrcode.min.js"></script>
-<script src="./assets/i18n-core.js"></script>
-<script src="./assets/app.js"></script>
+  <!-- Load order: QR lib -> i18n core (EN+DE) -> app logic -->
+  <script src="./assets/qrcode.min.js"></script>
+  <script src="./assets/i18n-core.js"></script>
+  <script src="./assets/app.js"></script>
 </body>
 </html>
+
