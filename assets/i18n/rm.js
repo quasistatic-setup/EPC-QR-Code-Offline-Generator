@@ -65,6 +65,7 @@ window.I18N.rm = {
   err_iban: "IBAN n’è betg valid.",
   err_purpose: "Il code dal intent sto avair 1–4 caracters alfanumerics.",
   err_bic: "Format BIC nunvalid.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Text memia lung: pais surpassa 331 bytes (${bytes}). Perstgisa e scurscha.`,
   err_qrlib: "L’architectura QR n’è betg cargiada. Assegura ch’assets/qrcode.min.js exista ed è cargià avant app.js.",
 

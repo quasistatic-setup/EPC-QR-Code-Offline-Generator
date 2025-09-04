@@ -65,6 +65,7 @@ window.I18N.lv = {
   err_iban: "IBAN nav derīgs.",
   err_purpose: "Mērķa kodam jābūt 1–4 burtciparu zīmēm.",
   err_bic: "Nederīgs BIC formāts.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Teksts ir pārāk garš: pārsniedz 331 baitu (${bytes}). Lūdzu, saīsiniet.`,
   err_qrlib: "QR bibliotēka nav ielādēta. Pārliecinieties, ka assets/qrcode.min.js pastāv un tiek ielādēts pirms app.js.",
 

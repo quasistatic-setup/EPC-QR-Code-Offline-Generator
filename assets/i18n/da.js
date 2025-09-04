@@ -65,6 +65,7 @@ window.I18N.da = {
   err_iban: "IBAN er ugyldig.",
   err_purpose: "Formålskode skal være 1–4 alfanumeriske tegn.",
   err_bic: "Ugyldigt BIC‑format.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Tekst for lang: payload overstiger 331 byte (${bytes}). Afkort venligst.`,
   err_qrlib: "QR‑bibliotek ikke indlæst. Sikr at assets/qrcode.min.js findes og indlæses før app.js.",
 

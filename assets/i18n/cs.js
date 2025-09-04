@@ -65,6 +65,7 @@ window.I18N.cs = {
   err_iban: "IBAN je neplatný.",
   err_purpose: "Kód účelu musí mít 1–4 alfanumerické znaky.",
   err_bic: "Neplatný formát BIC.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Text je příliš dlouhý: data překračují 331 bajtů (${bytes}). Zkraťte prosím.`,
   err_qrlib: "QR knihovna není načtena. Ujistěte se, že assets/qrcode.min.js existuje a načítá se před app.js.",
 

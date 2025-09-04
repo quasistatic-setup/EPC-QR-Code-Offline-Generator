@@ -65,6 +65,7 @@ window.I18N.el = {
   err_iban: "Το IBAN δεν είναι έγκυρο.",
   err_purpose: "Ο κωδικός σκοπού πρέπει να έχει 1–4 αλφαριθμητικούς χαρακτήρες.",
   err_bic: "Μη έγκυρη μορφή BIC.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Κείμενο πολύ μεγάλο: το φορτίο υπερβαίνει τα 331 bytes (${bytes}). Συντομεύστε.`,
   err_qrlib: "Η βιβλιοθήκη QR δεν φορτώθηκε. Βεβαιωθείτε ότι το assets/qrcode.min.js υπάρχει και φορτώνεται πριν από το app.js.",
 

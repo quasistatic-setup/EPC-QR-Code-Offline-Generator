@@ -65,6 +65,7 @@ window.I18N.sl = {
   err_iban: "IBAN ni veljaven.",
   err_purpose: "Koda namena mora imeti 1–4 alfanumerične znake.",
   err_bic: "Neveljavna oblika BIC.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Besedilo je predolgo: obremenitev presega 331 bajtov (${bytes}). Prosimo, skrajšajte.`,
   err_qrlib: "Knjižnica QR ni naložena. Preverite, da assets/qrcode.min.js obstaja in se naloži pred app.js.",
 
