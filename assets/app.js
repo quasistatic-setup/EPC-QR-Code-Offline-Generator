@@ -424,7 +424,7 @@ function buildPayloadDraft(){
   };
   const lines = [];
   lines.push('BCD', v.version || '001', v.charset || '1', 'SCT');
-  lines.push(v.bic ? v.bic.trim() : '');
+  lines.push(v.bic ? v.bic.trim().toUpperCase() : '');
   lines.push((v.name||'').trim());
   lines.push(ibanClean(v.iban));
   const n = parseAmountToNumber(v.amount); lines.push(isFinite(n) && n>=0.01 ? 'EUR'+n.toFixed(2) : '');
@@ -439,7 +439,7 @@ function buildPayloadDraft(){
 function buildPayload(v){
   const lines = [];
   lines.push('BCD', v.version || '001', v.charset || '1', 'SCT');
-  lines.push(v.bic ? v.bic.trim() : '');
+  lines.push(v.bic ? v.bic.trim().toUpperCase() : '');
   lines.push(v.name.trim());
   lines.push(ibanClean(v.iban));
   lines.push(v.amount ? asEUR(v.amount) : '');
