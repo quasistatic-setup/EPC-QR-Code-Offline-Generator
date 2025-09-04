@@ -294,6 +294,9 @@ function fixFooterSeparators(){
   // Prepend simple emoji icons if not already present
   const ensureIcon = (el, icon) => {
     if (!el) return;
+    // If an <img> already exists inside the label, keep it (original icon)
+    if (el.querySelector('img')) return;
+    // Fallback: prepend emoji icon
     const txt = String(el.textContent || '');
     const trimmed = txt.trimStart();
     if (!trimmed.startsWith(icon)) el.textContent = `${icon} ${trimmed}`.trim();

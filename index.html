@@ -43,6 +43,7 @@
     details > summary { cursor:pointer; user-select:none; padding:8px 0; font-weight:700; }
     .footer { padding:14px 20px; color:var(--muted); font-size:13px; text-align:center; border-top:1px solid var(--border); background:var(--card); }
     .footer a { color:#3b82f6; text-decoration:none; margin:0 8px; }
+    .icon { width:16px; height:16px; vertical-align:middle; margin-right:6px; }
     .is-valid { border-color:#10b981 !important; box-shadow:0 0 0 3px rgba(16,185,129,.15); }
     .is-invalid { border-color:#ef4444 !important; box-shadow:0 0 0 3px rgba(239,68,68,.35) !important; outline:0 !important; }
     input:focus:not(.is-invalid), select:focus:not(.is-invalid), textarea:focus:not(.is-invalid) { border-color:#6366f1; box-shadow:0 0 0 3px rgba(99,102,241,.25); outline:0; }
@@ -194,9 +195,9 @@
     <span id="f_offline">This page works fully offline. Just open <em>index.html</em>.</span><br />
     <span>
       <span id="f_support">Support:</span>
-      <a href="https://buymeacoffee.com/quasistatic" target="_blank" rel="noopener"><span id="f_buy">Buy me a coffee</span></a>
-      <a href="https://ko-fi.com/quasistatic" target="_blank" rel="noopener"><span id="f_kofi">Ko-fi</span></a>
-      <a href="https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator" target="_blank" rel="noopener"><span id="f_gh">GitHub</span></a>
+      <a href="https://buymeacoffee.com/quasistatic" target="_blank" rel="noopener"><span id="f_buy"><img class="icon" src="./assets/icons/buymeacoffee.svg" alt="Buy me a coffee" />Buy me a coffee</span></a>
+      <a href="https://ko-fi.com/quasistatic" target="_blank" rel="noopener"><span id="f_kofi"><img class="icon" src="./assets/icons/ko-fi.svg" alt="Ko‑fi" />Ko‑fi</span></a>
+      <a href="https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator" target="_blank" rel="noopener"><span id="f_gh"><img class="icon" src="./assets/icons/github.svg" alt="GitHub" />GitHub</span></a>
     </span>
   </div>
 
@@ -206,4 +207,3 @@
   <script src="./assets/app.js"></script>
 </body>
 </html>
-
