@@ -142,7 +142,9 @@
         <div class="grid2">
           <label id="l_bic">
             <div class="label-row"><span class="title">BIC (only in special cases)</span></div>
-            <input id="bic" maxlength="11" placeholder="usually empty in EU" />
+            <input id="bic" maxlength="11" placeholder="usually empty in EU"
+                   pattern="[A-Z0-9]{8}([A-Z0-9]{3})?" title="8 or 11 uppercase letters/digits"
+                   autocapitalize="characters" />
           </label>
           <label id="l_b2o">
             <div class="label-row"><span class="title">Note to originator</span></div>
