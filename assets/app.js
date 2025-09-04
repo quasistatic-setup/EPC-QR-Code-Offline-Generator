@@ -406,7 +406,8 @@ function collectPayloadFields(v, opts={}){
   const lines = [];
   const draft = opts.draft;
   lines.push('BCD', v.version || '001', v.charset || '1', 'SCT');
-  lines.push(v.bic ? v.bic.trim() : '');
+  // Ensure BIC is uppercase in the payload
+  lines.push(v.bic ? v.bic.trim().toUpperCase() : '');
   lines.push((v.name||'').trim());
   lines.push(ibanClean(v.iban));
   if (draft) {
@@ -643,7 +644,8 @@ document.getElementById('gen').addEventListener('click', ()=>{
     if(!v.name.trim()) throw new Error(dict.err_name);
     if(!ibanIsValid(v.iban)) throw new Error(dict.err_iban);
     if(v.purpose && !/^[A-Za-z0-9]{1,4}$/.test(v.purpose)) throw new Error(dict.err_purpose);
-    if(v.bic && !/^[A-Za-z]{4}[A-Za-z]{2}[A-Za-z0-9]{2}([A-Za-z0-9]{3})?$/.test(v.bic)) throw new Error(dict.err_bic);
+    // Enforce uppercase BIC: convert in UI; validate uppercase pattern here
+    if(v.bic && !/^[A-Z]{4}[A-Z]{2}[A-Z0-9]{2}([A-Z0-9]{3})?$/.test(v.bic)) throw new Error(dict.err_bic);
 
     const payload = buildPayload(v);
     const bytes = ensureLimits(payload);
@@ -689,6 +691,11 @@ for (const id of ["name","iban","amount","rem_unstruct","rem_struct","purpose","
   el.addEventListener("input", ()=>{
     if (id === "iban") formatIbanUIKeepCaret(el);
     if (id === "amount") formatAmountUIKeepCaret(el, LANG);
+    if (id === "bic") {
+      const pos = el.selectionStart;
+      el.value = String(el.value||"").toUpperCase();
+      if (typeof pos === 'number') try{ el.setSelectionRange(pos, pos); }catch{}
+    }
     if (hasQR) clearQR();
     lastChanged = id; // track which field triggered the change
     updateLiveUI();
