@@ -13,15 +13,6 @@ const OPTIONAL_LOCALES = [
 ];
 
 const LANGUAGE_NAMES = {
-  en:"English", de:"Deutsch", fr:"Français", it:"Italiano", es:"Español", nl:"Nederlands",
-  pt:"Português", sv:"Svenska", da:"Dansk", no:"Norsk", fi:"Suomi", is:"Íslenska",
-  cs:"Čeština", sk:"Slovenčina", pl:"Polski", hu:"Magyar", ro:"Română", bg:"Български",
-  hr:"Hrvatski", sl:"Slovenščina", lt:"Lietuvių", lv:"Latviešu", et:"Eesti",
-  el:"Ελληνικά", ga:"Gaeilge", lb:"Lëtzebuergescht", rm:"Rumantsch", ca:"Català",
-  tr:"Türkçe", cy:"Cymraeg", gd:"Gàidhlig", mt:"Malti"
-};
-// Normalize language endonyms (fix encoding issues)
-Object.assign(LANGUAGE_NAMES, {
   en: "English",
   de: "Deutsch",
   fr: "Français",
@@ -54,7 +45,7 @@ Object.assign(LANGUAGE_NAMES, {
   cy: "Cymraeg",
   gd: "Gàidhlig",
   mt: "Malti"
-});
+};
 
 // ---------- i18n helpers ----------
 function ensureI18N(){
