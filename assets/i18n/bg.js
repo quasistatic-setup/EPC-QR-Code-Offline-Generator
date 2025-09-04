@@ -65,6 +65,7 @@ window.I18N.bg = {
   err_iban: "IBAN е невалиден.",
   err_purpose: "Кодът на целта трябва да е 1–4 букви или цифри.",
   err_bic: "Невалиден формат на BIC.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Текстът е твърде дълъг: payload надвишава 331 байта (${bytes}). Скъсете текста.`,
   err_qrlib: "QR библиотеката не е заредена. Уверете се, че assets/qrcode.min.js съществува и се зарежда преди app.js.",
 

@@ -65,6 +65,7 @@ window.I18N.nl = {
   err_iban: "IBAN is ongeldig.",
   err_purpose: "Doelcode moet 1–4 alfanumerieke tekens hebben.",
   err_bic: "Ongeldig BIC‑formaat.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Tekst te lang: payload overschrijdt 331 bytes (${bytes}). Graag inkorten.`,
   err_qrlib: "QR‑bibliotheek niet geladen. Zorg dat assets/qrcode.min.js bestaat en vóór app.js wordt geladen.",
 

@@ -65,6 +65,7 @@ window.I18N.hr = {
   err_iban: "IBAN nije valjan.",
   err_purpose: "Šifra svrhe mora imati 1–4 alfanumerička znaka.",
   err_bic: "Nevaljan format BIC‑a.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Tekst je predugačak: payload prelazi 331 bajt (${bytes}). Skraćivanje je potrebno.`,
   err_qrlib: "QR knjižnica nije učitana. Provjerite da assets/qrcode.min.js postoji i učitava se prije app.js.",
 

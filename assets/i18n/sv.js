@@ -65,6 +65,7 @@ window.I18N.sv = {
   err_iban: "IBAN är ogiltigt.",
   err_purpose: "Syfteskod måste vara 1–4 alfanumeriska tecken.",
   err_bic: "Ogiltigt BIC‑format.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Text för lång: nyttolast överskrider 331 byte (${bytes}). Förkorta.`,
   err_qrlib: "QR‑bibliotek inte inläst. Se till att assets/qrcode.min.js finns och laddas före app.js.",
 

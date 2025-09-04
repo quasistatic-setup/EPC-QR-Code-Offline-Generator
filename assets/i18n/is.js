@@ -65,6 +65,7 @@ window.I18N.is = {
   err_iban: "IBAN er ógilt.",
   err_purpose: "Tilgangskóði þarf að vera 1–4 bókstafir eða tölur.",
   err_bic: "Ógilt BIC‑snið.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Texti of langur: gagnafarmur fer yfir 331 bæti (${bytes}). Styttu textann.`,
   err_qrlib: "QR‑safn ekki hlaðið. Gakktu úr skugga um að assets/qrcode.min.js sé til og hlaðist áður en app.js.",
 

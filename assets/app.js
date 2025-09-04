@@ -79,7 +79,7 @@ function ensureI18N(){
       placeholders:{ name:"e.g., Example GmbH", iban:"DE89 3704 0044 0532 0130 00", amount:"12.34", unstruct:"Invoice 4711, Customer 123", struct:"e.g., RF18…", purpose:"e.g., GDDS", bic:"usually empty in EU", b2o:"optional" },
       exdata:{ name:"Example GmbH", iban:"DE71 1102 2033 0123 4567 89", amount:"12.30", unstruct:"Invoice 4711", struct:"", purpose:"", bic:"", b2o:"" },
       status_ok:"QR code created. Scan with your banking app or save.", status_prefill:"Example data filled. Click “Generate QR code”.", status_noqr:"No QR code yet.",
-      err_name:"Recipient is required.", err_iban:"IBAN is invalid.", err_purpose:"Purpose code must be 1–4 alphanumeric characters.", err_bic:"Invalid BIC format.",
+      err_name:"Recipient is required.", err_iban:"IBAN is invalid.", err_purpose:"Purpose code must be 1–4 alphanumeric characters.", err_bic:"Invalid BIC format.", err_amount_min:"Invalid amount: at least 0.01 EUR.",
       err_len:(b)=>`Text too long: payload exceeds 331 bytes (${b}). Please shorten.`, err_qrlib:"QR library not loaded. Ensure assets/qrcode.min.js exists and is loaded before app.js.",
       footer_offline:"This page works fully offline. Just open index.html.", footer_support:"Support:", footer_buy:"☕ Buy me a coffee", footer_kofi:"❤️ Ko-fi", footer_gh:"🌐 GitHub"
     };
@@ -372,8 +372,7 @@ function formatAmountUIKeepCaret(inputEl, lang){
 function asEUR(amount){
   if(!amount) return '';
   const n = parseAmountToNumber(amount);
-  if(!isFinite(n)||n<0.01)
-    throw new Error(LANG==="de" ? "Betrag ungültig: mindestens 0,01 EUR." : "Invalid amount: at least 0.01 EUR.");
+  if(!isFinite(n)||n<0.01) throw new Error(t().err_amount_min);
   return 'EUR'+n.toFixed(2);
 }
 function formatAmountFieldToTwoDecimals(){

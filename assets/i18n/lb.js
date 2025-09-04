@@ -65,6 +65,7 @@ window.I18N.lb = {
   err_iban: "IBAN ass net valabel.",
   err_purpose: "Zweckcode: 1–4 alfanumeresch Zeechen.",
   err_bic: "Ongëltege BIC‑Format.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Text ze laang: Payload iwwerschreit 331 Bytes (${bytes}). W.e.g. verkierzen.`,
   err_qrlib: "QR‑Bibliothéik net gelueden. Kontrolléier assets/qrcode.min.js an d’Laaschtuerdnung virun app.js.",
 

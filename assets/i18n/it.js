@@ -65,6 +65,7 @@ window.I18N.it = {
   err_iban: "L’IBAN non è valido.",
   err_purpose: "Il codice causale deve avere da 1 a 4 caratteri alfanumerici.",
   err_bic: "Formato BIC non valido.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Testo troppo lungo: il payload supera 331 byte (${bytes}). Ridurre il contenuto.`,
   err_qrlib: "Libreria QR non caricata. Assicurati che assets/qrcode.min.js esista ed è caricato prima di app.js.",
 

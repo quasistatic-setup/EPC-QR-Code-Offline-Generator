@@ -65,6 +65,7 @@ window.I18N.fi = {
   err_iban: "IBAN on virheellinen.",
   err_purpose: "Tarkoituskoodi: 1–4 aakkosnumeerista merkkiä.",
   err_bic: "Virheellinen BIC‑muoto.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Teksti liian pitkä: kuorma ylittää 331 tavua (${bytes}). Lyhennä.`,
   err_qrlib: "QR‑kirjasto ei ladattu. Varmista, että assets/qrcode.min.js on olemassa ja latautuu ennen app.js:ää.",
 

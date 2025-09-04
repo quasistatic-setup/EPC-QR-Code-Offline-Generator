@@ -67,6 +67,7 @@ window.I18N.de = {
   err_iban: "IBAN ist ungültig. Bitte prüfen.",
   err_purpose: "Purpose-Code: 1–4 alphanumerische Zeichen.",
   err_bic: "BIC-Format ungültig.",
+  err_amount_min: "Betrag ungültig: mindestens 0,01 EUR.",
   err_len: (bytes) => `Text zu lang: Nutzlast überschreitet 331 Bytes (${bytes}). Kürzen Sie Freitext/Referenzen.`,
   err_qrlib: "QR-Bibliothek nicht geladen. Prüfe assets/qrcode.min.js und die Lade-Reihenfolge.",
 

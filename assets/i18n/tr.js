@@ -65,6 +65,7 @@ window.I18N.tr = {
   err_iban: "IBAN geçersiz.",
   err_purpose: "Amaç kodu 1–4 alfasayısal karakter olmalıdır.",
   err_bic: "Geçersiz BIC biçimi.",
+  err_amount_min: "Invalid amount: at least 0.01 EUR.",
   err_len: (bytes) => `Metin çok uzun: yük 331 baytı aşıyor (${bytes}). Lütfen kısaltın.`,
   err_qrlib: "QR kitaplığı yüklenmedi. assets/qrcode.min.js dosyasının var olduğundan ve app.js’den önce yüklendiğinden emin olun.",
 

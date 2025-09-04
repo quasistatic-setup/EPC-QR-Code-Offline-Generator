@@ -69,6 +69,7 @@ window.I18N = {
     err_iban: "IBAN is invalid.",
     err_purpose: "Purpose code must be 1–4 alphanumeric characters.",
     err_bic: "Invalid BIC format.",
+    err_amount_min: "Invalid amount: at least 0.01 EUR.",
     err_len: (bytes) => `Text too long: payload exceeds 331 bytes (${bytes}). Please shorten.`,
     err_qrlib: "QR library not loaded. Ensure assets/qrcode.min.js exists and is loaded before app.js.",
 
