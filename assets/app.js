@@ -616,6 +616,13 @@ function updateLiveUI(){
   }
 }
 
+// Debounced live UI updates to avoid excessive re-renders while typing
+let _liveUITimer = null;
+function queueLiveUI(delayMs = 120){
+  try { clearTimeout(_liveUITimer); } catch {}
+  _liveUITimer = setTimeout(updateLiveUI, delayMs);
+}
+
 
 // ---------- Events ----------
 document.getElementById('gen').addEventListener('click', ()=>{
@@ -691,14 +698,14 @@ for (const id of ["name","iban","amount","rem_unstruct","rem_struct","purpose","
   el.addEventListener("input", ()=>{
     if (id === "iban") formatIbanUIKeepCaret(el);
     if (id === "amount") formatAmountUIKeepCaret(el, LANG);
-    if (id === "bic") {
+    if (id === "bic" || id === "rem_struct") {
       const pos = el.selectionStart;
       el.value = String(el.value||"").toUpperCase();
       if (typeof pos === 'number') try{ el.setSelectionRange(pos, pos); }catch{}
     }
     if (hasQR) clearQR();
     lastChanged = id; // track which field triggered the change
-    updateLiveUI();
+    queueLiveUI();
   });
   if (id === "amount") el.addEventListener("blur", formatAmountFieldToTwoDecimals);
 }
@@ -720,6 +727,24 @@ document.getElementById('themeToggle').addEventListener('click', ()=>{
   } else {
     applyLang(window.I18N[pref] ? pref : "en");
   }
+  // Accessibility and validation attributes (avoid relying on possibly corrupted inline HTML)
+  try {
+    const statusEl = document.getElementById('status');
+    if (statusEl) { statusEl.setAttribute('role','status'); statusEl.setAttribute('aria-live','polite'); }
+    const ibanEl = document.getElementById('iban');
+    if (ibanEl) {
+      ibanEl.setAttribute('autocapitalize','characters');
+      ibanEl.setAttribute('inputmode','text');
+      ibanEl.setAttribute('pattern','^[A-Z]{2}[0-9]{2}[A-Z0-9 ]{0,30}$');
+      ibanEl.setAttribute('title','Starts with country code + 2 digits; letters/digits, spaces allowed');
+    }
+    const structEl = document.getElementById('rem_struct');
+    if (structEl) {
+      structEl.setAttribute('autocapitalize','characters');
+      structEl.setAttribute('pattern','^RF[0-9]{2}[A-Z0-9]{1,21}$');
+      structEl.setAttribute('title','RF + 2 digits + 1–21 letters/digits (no spaces)');
+    }
+  } catch {}
   const ibanEl = document.getElementById('iban');
   if (ibanEl && ibanEl.value) formatIbanUIKeepCaret(ibanEl);
   clearQR(); // start disabled

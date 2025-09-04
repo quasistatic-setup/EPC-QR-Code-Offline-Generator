@@ -99,7 +99,9 @@
       </label>
       <label id="l_iban">
         <div class="label-row"><span class="title">IBAN</span></div>
-        <input id="iban" maxlength="34" placeholder="DE89 3704 0044 0532 0130 00" />
+        <input id="iban" maxlength="34" placeholder="DE89 3704 0044 0532 0130 00"
+               pattern="^[A-Z]{2}[0-9]{2}[A-Z0-9 ]{0,30}$" title="Starts with country code + 2 digits; letters/digits, spaces allowed"
+               autocapitalize="characters" inputmode="text" aria-describedby="ibanHint" />
         <span class="hint" id="ibanHint"></span>
       </label>
     </div>
@@ -107,7 +109,7 @@
     <div class="grid2" style="margin-top:12px;">
       <label id="l_amount">
         <div class="label-row"><span class="title">Amount in EUR</span></div>
-        <input id="amount" inputmode="decimal" pattern="[0-9., ]*" autocomplete="off" spellcheck="false" placeholder="12.34" />
+        <input id="amount" inputmode="decimal" pattern="[0-9., ]*" autocomplete="off" spellcheck="false" placeholder="12.34" aria-describedby="amountHint" />
         <span class="hint" id="amountHint"></span>
       </label>
       <label id="l_unstruct">
@@ -193,8 +195,8 @@
         </div>
       </span>
 
-      <button type="button" id="ex">Example data</button>
-      <span id="status" class="status"></span>
+        <button type="button" id="ex">Example data</button>
+        <span id="status" class="status" role="status" aria-live="polite"></span>
     </div>
   </section>
 
