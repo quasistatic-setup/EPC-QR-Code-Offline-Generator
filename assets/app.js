@@ -408,6 +408,27 @@ function formatIbanUIKeepCaret(inputEl){
 
 function byteLenUtf8(str){ return new TextEncoder().encode(str).length; }
 
+function collectPayloadFields(v, opts={}){
+  const lines = [];
+  const draft = opts.draft;
+  lines.push('BCD', v.version || '001', v.charset || '1', 'SCT');
+  lines.push(v.bic ? v.bic.trim() : '');
+  lines.push((v.name||'').trim());
+  lines.push(ibanClean(v.iban));
+  if (draft) {
+    const n = parseAmountToNumber(v.amount);
+    lines.push(isFinite(n) && n>=0.01 ? 'EUR'+n.toFixed(2) : '');
+  } else {
+    lines.push(v.amount || '');
+  }
+  lines.push(v.purpose ? v.purpose.toUpperCase() : '');
+  const hasStruct = !!v.rem_struct, hasUnstruct = !!v.rem_unstruct;
+  lines.push(hasStruct ? v.rem_struct.trim() : '');
+  lines.push(hasUnstruct ? v.rem_unstruct.trim() : '');
+  lines.push(v.b2o ? v.b2o.trim() : '');
+  return lines;
+}
+
 // Build payload "draft" to compute live byte length even if not valid yet
 function buildPayloadDraft(){
   const v = {
@@ -422,36 +443,20 @@ function buildPayloadDraft(){
     version: document.getElementById('version').value,
     charset: document.getElementById('charset').value
   };
-  const lines = [];
-  lines.push('BCD', v.version || '001', v.charset || '1', 'SCT');
-  lines.push(v.bic ? v.bic.trim() : '');
-  lines.push((v.name||'').trim());
-  lines.push(ibanClean(v.iban));
-  const n = parseAmountToNumber(v.amount); lines.push(isFinite(n) && n>=0.01 ? 'EUR'+n.toFixed(2) : '');
-  lines.push(v.purpose ? v.purpose.toUpperCase() : '');
-  const hasStruct = !!v.rem_struct, hasUnstruct = !!v.rem_unstruct;
-  lines.push(hasStruct ? v.rem_struct.trim() : '');
-  lines.push(hasUnstruct ? v.rem_unstruct.trim() : '');
-  lines.push(v.b2o ? v.b2o.trim() : '');
+  const lines = collectPayloadFields(v, {draft:true});
   return lines.join('\n').replace(/(\n)+$/,'');
 }
 
 function buildPayload(v){
-  const lines = [];
-  lines.push('BCD', v.version || '001', v.charset || '1', 'SCT');
-  lines.push(v.bic ? v.bic.trim() : '');
-  lines.push(v.name.trim());
-  lines.push(ibanClean(v.iban));
-  lines.push(v.amount ? asEUR(v.amount) : '');
-  lines.push(v.purpose ? v.purpose.toUpperCase() : '');
   const hasStruct = !!v.rem_struct, hasUnstruct = !!v.rem_unstruct;
   if (hasStruct && hasUnstruct)
     throw new Error(LANG==="de"
       ? "Bitte nur EINE Referenz verwenden: entweder „Strukturiert“ ODER „Verwendungszweck“."
       : "Use only ONE reference: either structured OR free text.");
-  lines.push(hasStruct ? v.rem_struct.trim() : '');
-  lines.push(hasUnstruct ? v.rem_unstruct.trim() : '');
-  lines.push(v.b2o ? v.b2o.trim() : '');
+  const lines = collectPayloadFields({
+    ...v,
+    amount: v.amount ? asEUR(v.amount) : ''
+  });
   return lines.join('\n').replace(/(\n)+$/,'');
 }
 
