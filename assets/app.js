@@ -290,9 +290,22 @@ function fixFooterSeparators(){
   const buyL  = document.getElementById('f_buy');
   const kofiL = document.getElementById('f_kofi');
   const ghL   = document.getElementById('f_gh');
-  const clean = (el)=>{ if (el) el.textContent = String(el.textContent||'').replace(/^\s*[^A-Za-z0-9]+\s*/, ''); };
-  clean(buyL); clean(kofiL); clean(ghL);
+
+  // Prepend simple emoji icons if not already present
+  const ensureIcon = (el, icon) => {
+    if (!el) return;
+    const txt = String(el.textContent || '');
+    const trimmed = txt.trimStart();
+    if (!trimmed.startsWith(icon)) el.textContent = `${icon} ${trimmed}`.trim();
+  };
+  ensureIcon(buyL, '☕');
+  ensureIcon(kofiL, '🍵');
+  ensureIcon(ghL, '🐙');
+
+  // Remove existing plain text nodes (old separators)
   Array.from(container.childNodes).forEach(n=>{ if (n.nodeType === 3) n.remove(); });
+
+  // Rebuild separators with a simple bullet
   if (buyA && kofiA) container.insertBefore(document.createTextNode(' • '), kofiA);
   if (kofiA && ghA)  container.insertBefore(document.createTextNode(' • '), ghA);
 }
