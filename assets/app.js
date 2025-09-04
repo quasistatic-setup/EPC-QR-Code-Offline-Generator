@@ -271,6 +271,32 @@ function fixFooterSeparators(){
   if (kofiA && ghA)  container.insertBefore(document.createTextNode(' · '), ghA);
 }
 
+// --- Overrides to avoid encoding issues in UI texts ---
+function updateThemeButton(){
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  btn.textContent = isDark ? t().theme_light : t().theme_dark;
+}
+
+function fixFooterSeparators(){
+  const supportEl = document.getElementById('f_support');
+  if (!supportEl) return;
+  const container = supportEl.parentElement;
+  if (!container) return;
+  const buyA  = container.querySelector('a[href*="buymeacoffee"]');
+  const kofiA = container.querySelector('a[href*="ko-fi"]');
+  const ghA   = container.querySelector('a[href*="github.com"]');
+  const buyL  = document.getElementById('f_buy');
+  const kofiL = document.getElementById('f_kofi');
+  const ghL   = document.getElementById('f_gh');
+  const clean = (el)=>{ if (el) el.textContent = String(el.textContent||'').replace(/^\s*[^A-Za-z0-9]+\s*/, ''); };
+  clean(buyL); clean(kofiL); clean(ghL);
+  Array.from(container.childNodes).forEach(n=>{ if (n.nodeType === 3) n.remove(); });
+  if (buyA && kofiA) container.insertBefore(document.createTextNode(' • '), kofiA);
+  if (kofiA && ghA)  container.insertBefore(document.createTextNode(' • '), ghA);
+}
+
 // ---------- Validation & helpers ----------
 function ibanClean(s){ return String(s||'').replace(/[\s\-]/g,'').toUpperCase(); }
 function ibanIsValid(iban){
@@ -743,6 +769,11 @@ document.getElementById('themeToggle').addEventListener('click', ()=>{
       structEl.setAttribute('autocapitalize','characters');
       structEl.setAttribute('pattern','^RF[0-9]{2}[A-Z0-9]{1,21}$');
       structEl.setAttribute('title','RF + 2 digits + 1–21 letters/digits (no spaces)');
+    }
+    const saveCaret = document.getElementById('saveCaret');
+    if (saveCaret) {
+      saveCaret.setAttribute('aria-label','Open save format menu');
+      saveCaret.textContent = '▼';
     }
   } catch {}
   const ibanEl = document.getElementById('iban');
