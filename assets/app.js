@@ -302,16 +302,20 @@ function formatAmountLocalized(n, lang){
   return sign + g + (dec + fracPart);
 }
 function sanitizeAmountValue(value){
-  // allow digits, spaces, dot and comma; keep at most one decimal (mapped to dot)
-  let s = String(value||'').replace(/[^0-9., ]/g, '');
-  s = s.replace(/ {2,}/g, ' ');
-  // unify to dot
-  s = s.replace(/,/g, '.');
-  if (s.indexOf('.') !== -1) {
-    const i = s.indexOf('.');
-    s = s.slice(0, i + 1) + s.slice(i + 1).replace(/\./g, '');
+  // allow digits, dot, comma; last separator becomes decimal, others removed
+  // Examples: "1.234,56" → "1234.56", "1,234.56" → "1234.56"
+  let s = String(value||'').replace(/\s+/g, '').replace(/[^0-9.,]/g, '');
+  const lastDot = s.lastIndexOf('.');
+  const lastComma = s.lastIndexOf(',');
+  const sepIndex = Math.max(lastDot, lastComma);
+  let intPart = s, fracPart = '';
+  if (sepIndex !== -1){
+    intPart = s.slice(0, sepIndex);
+    fracPart = s.slice(sepIndex + 1);
   }
-  return s;
+  intPart = intPart.replace(/[.,]/g, '');
+  fracPart = fracPart.replace(/[.,]/g, '');
+  return sepIndex !== -1 ? intPart + '.' + fracPart : intPart;
 }
 
 function formatAmountUIKeepCaret(inputEl, lang){
