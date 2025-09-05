@@ -290,6 +290,11 @@ function fixFooterSeparators(){
   const buyL  = document.getElementById('f_buy');
   const kofiL = document.getElementById('f_kofi');
   const ghL   = document.getElementById('f_gh');
+  const hasImgs = !!((buyL && buyL.querySelector('img')) || (kofiL && kofiL.querySelector('img')) || (ghL && ghL.querySelector('img')));
+  if (hasImgs) {
+    // Old/original look provided via HTML with brand images and separators; leave as-is
+    return;
+  }
 
   // Prepend simple emoji icons if not already present
   const ensureIcon = (el, icon) => {
@@ -305,12 +310,10 @@ function fixFooterSeparators(){
   ensureIcon(kofiL, '🍵');
   ensureIcon(ghL, '🐙');
 
-  // Remove existing plain text nodes (old separators)
+  // Remove existing plain text nodes (old separators) and rebuild with a simple bullet
   Array.from(container.childNodes).forEach(n=>{ if (n.nodeType === 3) n.remove(); });
-
-  // Rebuild separators with a simple bullet
-  if (buyA && kofiA) container.insertBefore(document.createTextNode(' • '), kofiA);
-  if (kofiA && ghA)  container.insertBefore(document.createTextNode(' • '), ghA);
+  if (buyA && kofiA) container.insertBefore(document.createTextNode(' · '), kofiA);
+  if (kofiA && ghA)  container.insertBefore(document.createTextNode(' · '), ghA);
 }
 
 // ---------- Validation & helpers ----------
