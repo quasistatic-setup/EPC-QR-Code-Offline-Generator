@@ -65,7 +65,7 @@ window.I18N.ca = {
   err_iban: "L’IBAN no és vàlid.",
   err_purpose: "El codi de finalitat ha de tenir 1–4 caràcters alfanumèrics.",
   err_bic: "Format BIC no vàlid.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Import no vàlid: com a mínim 0,01 EUR.",
   err_len: (bytes) => `Text massa llarg: la càrrega supera 331 bytes (${bytes}). Escurceu‑lo, si us plau.`,
   err_qrlib: "Biblioteca QR no carregada. Assegureu‑vos que assets/qrcode.min.js existeix i es carrega abans d’app.js.",
 

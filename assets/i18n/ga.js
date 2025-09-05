@@ -65,7 +65,7 @@ window.I18N.ga = {
   err_iban: "Níl IBAN bailí.",
   err_purpose: "Caithfidh 1–4 charachtar alfa-uimhriúil a bheith sa chód cuspóra.",
   err_bic: "Formáid BIC neamhbhailí.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Méid neamhbhailí: ar a laghad 0,01 EUR.",
   err_len: (bytes) => `Tá an téacs ró‑fhada: sáraíonn an t‑ualach 331 beart (${bytes}). Gearr síos, le do thoil.`,
   err_qrlib: "Níor lódáladh an leabharlann QR. Bí cinnte go bhfuil assets/qrcode.min.js ann agus lódáiltear é roimh app.js.",
 

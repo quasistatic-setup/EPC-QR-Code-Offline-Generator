@@ -65,7 +65,7 @@ window.I18N.gd = {
   err_iban: "Chan eil an IBAN dligheach.",
   err_purpose: "Feumaidh 1–4 caractaran alfanumerach a bhith san chòd adhbhair.",
   err_bic: "Fòrmat BIC mì‑dligheach.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Suim mì-dhligheach: co-dhiù 0,01 EUR.",
   err_len: (bytes) => `Tha an teacsa ro fhada: tha an uallach a’ dol thairis air 331 bytes (${bytes}). Giorraich e, mas e do thoil e.`,
   err_qrlib: "Cha deach an leabharlann QR a luchdadh. Dèan cinnteach gu bheil assets/qrcode.min.js ann agus air a luchdadh mus tèid app.js.",
 

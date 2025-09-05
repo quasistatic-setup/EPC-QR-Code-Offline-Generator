@@ -65,7 +65,7 @@ window.I18N.cy = {
   err_iban: "Nid yw’r IBAN yn ddilys.",
   err_purpose: "Rhaid i god pwrpas fod â 1–4 nod alffaniwmerig.",
   err_bic: "Fformat BIC annilys.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Swm annilys: o leiaf 0.01 EUR.",
   err_len: (bytes) => `Mae’r testun yn rhy hir: mae’r llwyth yn fwy na 331 beit (${bytes}). Torrwch i lawr, os gwelwch yn dda.`,
   err_qrlib: "Ni lwythwyd y llyfrgell QR. Gwnewch yn siŵr bod assets/qrcode.min.js yn bodoli ac yn cael ei lwytho cyn app.js.",
 

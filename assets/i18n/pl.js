@@ -65,7 +65,7 @@ window.I18N.pl = {
   err_iban: "IBAN jest nieprawidłowy.",
   err_purpose: "Kod celu musi mieć 1–4 znaki alfanumeryczne.",
   err_bic: "Nieprawidłowy format BIC.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Nieprawidłowa kwota: co najmniej 0,01 EUR.",
   err_len: (bytes) => `Tekst za długi: ładunek przekracza 331 bajtów (${bytes}). Proszę skrócić.`,
   err_qrlib: "Biblioteka QR niezaładowana. Upewnij się, że assets/qrcode.min.js istnieje i ładuje się przed app.js.",
 

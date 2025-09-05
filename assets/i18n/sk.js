@@ -65,7 +65,7 @@ window.I18N.sk = {
   err_iban: "IBAN je neplatný.",
   err_purpose: "Kód účelu musí mať 1–4 alfanumerické znaky.",
   err_bic: "Neplatný formát BIC.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Neplatná suma: aspoň 0,01 EUR.",
   err_len: (bytes) => `Text je príliš dlhý: presahuje 331 bajtov (${bytes}). Skráťte, prosím.`,
   err_qrlib: "Knižnica QR nie je načítaná. Uistite sa, že assets/qrcode.min.js existuje a je načítaná pred app.js.",
 

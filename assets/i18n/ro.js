@@ -65,7 +65,7 @@ window.I18N.ro = {
   err_iban: "IBAN este invalid.",
   err_purpose: "Codul scop trebuie să aibă 1–4 caractere alfanumerice.",
   err_bic: "Format BIC invalid.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Sumă invalidă: cel puțin 0,01 EUR.",
   err_len: (bytes) => `Text prea lung: încărcătura depășește 331 byți (${bytes}). Vă rugăm să scurtați.`,
   err_qrlib: "Biblioteca QR nu este încărcată. Asigurați‑vă că assets/qrcode.min.js există și este încărcată înainte de app.js.",
 

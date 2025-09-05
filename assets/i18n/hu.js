@@ -65,7 +65,7 @@ window.I18N.hu = {
   err_iban: "Az IBAN érvénytelen.",
   err_purpose: "A rendeltetési kód 1–4 alfanumerikus karakter lehet.",
   err_bic: "Érvénytelen BIC formátum.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Érvénytelen összeg: legalább 0,01 EUR.",
   err_len: (bytes) => `Túl hosszú szöveg: a terhelés meghaladja a 331 bájtot (${bytes}). Rövidítse, kérem.`,
   err_qrlib: "A QR könyvtár nincs betöltve. Győződjön meg róla, hogy az assets/qrcode.min.js létezik és az app.js előtt töltődik be.",
 

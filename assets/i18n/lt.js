@@ -65,7 +65,7 @@ window.I18N.lt = {
   err_iban: "IBAN negaliojantis.",
   err_purpose: "Paskirties kodas turi būti 1–4 raidiniai‑skaitiniai simboliai.",
   err_bic: "Neteisingas BIC formatas.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Neteisinga suma: mažiausiai 0,01 EUR.",
   err_len: (bytes) => `Tekstas per ilgas: viršija 331 baitą (${bytes}). Sutrumpinkite.`,
   err_qrlib: "QR biblioteka neįkelta. Įsitikinkite, kad assets/qrcode.min.js yra ir įkeliamas prieš app.js.",
 

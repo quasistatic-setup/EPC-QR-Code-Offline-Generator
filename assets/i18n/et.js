@@ -65,7 +65,7 @@ window.I18N.et = {
   err_iban: "IBAN on vigane.",
   err_purpose: "Eesmärgi kood peab olema 1–4 tähte või numbrit.",
   err_bic: "Vigane BIC‑vorming.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Vigane summa: vähemalt 0,01 EUR.",
   err_len: (bytes) => `Tekst liiga pikk: koormus ületab 331 baiti (${bytes}). Lühenda.`,
   err_qrlib: "QR‑teek pole laaditud. Veendu, et assets/qrcode.min.js on olemas ja laaditakse enne app.js‑i.",
 

@@ -65,7 +65,7 @@ window.I18N.fr = {
   err_iban: "L’IBAN n’est pas valide.",
   err_purpose: "Le code de finalité doit comporter 1 à 4 caractères alphanumériques.",
   err_bic: "Format de BIC invalide.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Montant invalide : au moins 0,01 EUR.",
   err_len: (bytes) => `Texte trop long : la charge utile dépasse 331 octets (${bytes}). Veuillez raccourcir.`,
   err_qrlib: "Bibliothèque QR non chargée. Assurez‑vous que assets/qrcode.min.js existe et est chargé avant app.js.",
 

@@ -65,7 +65,7 @@ window.I18N.mt = {
   err_iban: "L‑IBAN mhux validu.",
   err_purpose: "Il‑kodiċi tal‑għan għandu jkun ta’ 1–4 karattri alfanumeriċi.",
   err_bic: "Format BIC mhux validu.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Ammont invalidu: mill-inqas 0.01 EUR.",
   err_len: (bytes) => `It‑test twil wisq: it‑tagħbija taqbeż 331 bytes (${bytes}). Qassar jekk jogħġbok.`,
   err_qrlib: "Il‑librerija QR mhix imtellgħa. Kun żgur li hemm assets/qrcode.min.js u titella’ qabel app.js.",
 

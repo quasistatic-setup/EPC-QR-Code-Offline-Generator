@@ -67,7 +67,7 @@ window.I18N.es = {
   err_iban: "El IBAN no es válido.",
   err_purpose: "El código de propósito debe tener 1–4 caracteres alfanuméricos.",
   err_bic: "Formato de BIC no válido.",
-  err_amount_min: "Invalid amount: at least 0.01 EUR.",
+  err_amount_min: "Importe no válido: al menos 0,01 EUR.",
   err_len: (bytes) => `Texto demasiado largo: la carga supera 331 bytes (${bytes}). Por favor, acórtelo.`,
   err_qrlib: "Biblioteca de QR no cargada. Asegúrese de que assets/qrcode.min.js exista y se cargue antes de app.js.",
 
