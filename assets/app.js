@@ -290,7 +290,7 @@ function updateThemeButton(){
   btn.textContent = isDark ? t().theme_light : t().theme_dark;
 }
 
-function fixFooterSeparators(){
+function fixFooterSeparators_legacy(){
   const supportEl = document.getElementById('f_support');
   if (!supportEl) return;
   const container = supportEl.parentElement;

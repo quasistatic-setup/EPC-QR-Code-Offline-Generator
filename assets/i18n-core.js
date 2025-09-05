@@ -1,4 +1,4 @@
-/* i18n-core.js – English base */
+/* i18n-core.js — English base (UTF-8) */
 window.I18N = {
   en: {
     title: "EPC QR Code Offline Generator",
@@ -40,14 +40,14 @@ window.I18N = {
     totalBytes: "Total bytes:",
     qrInfo: "QR info:",
     details: "Show details (EPC payload)",
-    lf: "Line breaks are shown as ⏎.",
+    lf: "Line breaks are shown as \\n.",
 
     placeholders: {
       name: "e.g., Example GmbH",
       iban: "DE89 3704 0044 0532 0130 00",
       amount: "12.34",
       unstruct: "Invoice 4711, Customer 123",
-      struct: "e.g., RF18…",
+      struct: "e.g., RF18XXXX",
       purpose: "e.g., GDDS",
       bic: "usually empty in EU",
       b2o: "optional"
@@ -63,7 +63,7 @@ window.I18N = {
       b2o: ""
     },
     status_ok: "QR code created. Scan with your banking app or save.",
-    status_prefill: "Example data filled. Click “Generate QR code”.",
+    status_prefill: "Example data filled. Click 'Generate QR code'.",
     status_noqr: "No QR code yet.",
     err_name: "Recipient is required.",
     err_iban: "IBAN is invalid.",
@@ -76,8 +76,9 @@ window.I18N = {
     // Footer
     footer_offline: "This page works fully offline. Just open index.html.",
     footer_support: "Support:",
-    footer_buy: "☕ Buy me a coffee",
-    footer_kofi: "❤️ Ko-fi",
-    footer_gh: "🌐 GitHub"
+    footer_buy: "Buy me a coffee",
+    footer_kofi: "Ko-fi",
+    footer_gh: "GitHub"
   }
 };
+
