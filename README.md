@@ -1,4 +1,4 @@
-﻿# EPC QR Code Offline Generator
+# EPC QR Code Offline Generator
 
 A lightweight, fully offline EPC/SEPA QR code generator. Open `index.html` in a modern browser, fill in the payment details, and save the QR code as PNG, SVG or JPG. No server calls; everything runs locally in your browser.
 
@@ -18,13 +18,13 @@ Advanced section expanded:
 - EPC payload guard: live byte counter and limit check (max 331 bytes)
 - Export: save QR as PNG, SVG, or JPG
 - UX niceties: dark/light theme, tooltips, example data, EPC payload details
-- Multiâ€‘language: English base plus optional locales in `assets/i18n/`
+- Multilingual: English base plus optional locales in `assets/i18n/`
 
 ## Quick Start
 1. Clone or download the repository.
-2. Open `index.html` in your browser (doubleâ€‘click is fine). Optionally serve it via a static file server.
-3. Fill in the required fields (Recipient, IBAN, optionally Amount) and click â€œGenerate QR codeâ€.
-4. Use â€œSave asâ€ to export the QR code as PNG/SVG/JPG.
+2. Open `index.html` in your browser (double-click is fine). Optionally serve it via a static file server.
+3. Fill in the required fields (Recipient, IBAN, optionally Amount) and click "Generate QR code".
+4. Use "Save as" to export the QR code as PNG/SVG/JPG.
 
 Note: The app works entirely offline. You can keep and use it without internet connectivity.
 
@@ -33,12 +33,12 @@ Note: The app works entirely offline. You can keep and use it without internet c
 - IBAN: validated using Mod97; input with or without spaces
 - Amount: decimal EUR value; formatted to two decimals on generate
 - Payment reference vs. Structured reference: mutually exclusive (use one or the other)
-- Purpose code: 1â€“4 alphanumeric characters (e.g., GDDS, SALA, CHAR)
+- Purpose code: 1-4 alphanumeric characters (e.g., GDDS, SALA, CHAR)
 - BIC: only needed for special/edge cases outside standard SEPA usage
 - EPC payload: maximum length 331 bytes; live counter is shown
 
 ## Export
-- PNG and JPG: 300Ã—300 px (ECL=M)
+- PNG and JPG: 300x300 px (ECL=M)
 - SVG: true vector output, suitable for print
 
 ## Internationalization (i18n)
@@ -51,12 +51,13 @@ Note: The app works entirely offline. You can keep and use it without internet c
   3) Name the file using the ISO language code (e.g., `it.js`)
 
 ## Project Structure
-- `index.html` â€“ UI, styles, and script loading
-- `assets/app.js` â€“ App logic: validation, payload build, QR render, export, i18n handling
-- `assets/qrcode.min.js` â€“ QR library (local)
-- `assets/i18n-core.js` â€“ Base i18n (EN)
-- `assets/i18n/*.js` â€“ Optional translations (DE, FR, IT, â€¦)
-- `LICENSE` â€“ MIT license
+- `index.html`: UI, styles, and script loading
+- `assets/app.js`: App logic (validation, payload build, QR render, export, i18n handling)
+- `assets/qrcode.min.js`: QR library (local)
+- `assets/i18n-core.js`: Base i18n (EN)
+- `assets/i18n/*.js`: Optional translations (DE, FR, IT, ...)
+- `assets/icons/*.svg`: Footer brand icons (Buy Me a Coffee, Ko-fi, GitHub)
+- `LICENSE`: MIT license
 
 ## Development
 - No build step required; static files only
@@ -66,21 +67,22 @@ Note: The app works entirely offline. You can keep and use it without internet c
   - Node (npx): `npx serve .`
 
 ## Privacy
-- No data is transmitted. All inputs stay in the userâ€™s browser.
+- No data is transmitted. All inputs stay in the user's browser.
 
 ## Support
 If this tool helps you and you want to support it:
 - Buy Me a Coffee: https://buymeacoffee.com/quasistatic
-- Koâ€‘fi: https://ko-fi.com/quasistatic
+- Ko-fi: https://ko-fi.com/quasistatic
 - GitHub: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator
 
 ## License
-MIT â€” see `LICENSE`.
+MIT — see `LICENSE`.
 
 ## Credits
-- QR code library: qrcode.js (local copy in assets/qrcode.min.js)
-- Brand icons: Simple Icons (Buy Me a Coffee, Ko‑fi, GitHub) — local SVGs in assets/icons/
+- QR code library: qrcode.js (local copy in `assets/qrcode.min.js`)
+- Brand icons: Simple Icons (Buy Me a Coffee, Ko-fi, GitHub) — local SVGs in `assets/icons/`
 
 ## Notes on Release
 - No Node or test tooling is required; this repo ships static assets only.
-- Language selector uses Intl.DisplayNames to list languages.
+- Language selector uses `Intl.DisplayNames` to list languages.
+
