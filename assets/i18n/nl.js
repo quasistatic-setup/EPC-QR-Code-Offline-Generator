@@ -71,8 +71,8 @@ window.I18N.nl = {
 
   footer_offline: "Deze pagina werkt volledig offline. Open gewoon index.html.",
   footer_support: "Ondersteuning:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

@@ -71,8 +71,8 @@ window.I18N.bg = {
 
   footer_offline: "Тази страница работи напълно офлайн. Просто отворете index.html.",
   footer_support: "Поддръжка:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

@@ -71,8 +71,8 @@ window.I18N.hu = {
 
   footer_offline: "Ez az oldal teljesen offline működik. Nyissa meg az index.html fájlt.",
   footer_support: "Támogatás:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

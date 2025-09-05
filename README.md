@@ -56,7 +56,6 @@ Note: The app works entirely offline. You can keep and use it without internet c
 - `assets/qrcode.min.js`: QR library (local)
 - `assets/i18n-core.js`: Base i18n (EN)
 - `assets/i18n/*.js`: Optional translations (DE, FR, IT, ...)
-- `assets/icons/*.svg`: Footer brand icons (Buy Me a Coffee, Ko-fi, GitHub)
 - `LICENSE`: MIT license
 
 ## Development
@@ -80,9 +79,8 @@ MIT — see `LICENSE`.
 
 ## Credits
 - QR code library: qrcode.js (local copy in `assets/qrcode.min.js`)
-- Brand icons: Simple Icons (Buy Me a Coffee, Ko-fi, GitHub) — local SVGs in `assets/icons/`
+- Footer labels: Emoji glyphs (☕❤️🌐) from system fonts
 
 ## Notes on Release
 - No Node or test tooling is required; this repo ships static assets only.
 - Language selector uses `Intl.DisplayNames` to list languages.
-

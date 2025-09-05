@@ -71,8 +71,8 @@ window.I18N.da = {
 
   footer_offline: "Denne side virker helt offline. Åbn blot index.html.",
   footer_support: "Support:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

@@ -71,9 +71,9 @@ window.I18N.cy = {
 
   footer_offline: "Mae’r dudalen hon yn gweithio’n llawn all-lein. Agorwch index.html yn unig.",
   footer_support: "Cefnogaeth:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 
 

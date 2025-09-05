@@ -71,8 +71,8 @@ window.I18N.is = {
 
   footer_offline: "Þessi síða virkar algjörlega án nettengingar. Opnaðu bara index.html.",
   footer_support: "Aðstoð:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

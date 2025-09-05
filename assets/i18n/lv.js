@@ -71,8 +71,8 @@ window.I18N.lv = {
 
   footer_offline: "Šī lapa darbojas pilnībā bezsaistē. Vienkārši atveriet index.html.",
   footer_support: "Atbalsts:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

@@ -71,8 +71,8 @@ window.I18N.no = {
 
   footer_offline: "Denne siden fungerer helt uten nett. Åpne bare index.html.",
   footer_support: "Støtte:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

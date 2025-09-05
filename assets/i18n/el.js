@@ -71,8 +71,8 @@ window.I18N.el = {
 
   footer_offline: "Αυτή η σελίδα λειτουργεί πλήρως εκτός σύνδεσης. Ανοίξτε απλώς το index.html.",
   footer_support: "Υποστήριξη:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

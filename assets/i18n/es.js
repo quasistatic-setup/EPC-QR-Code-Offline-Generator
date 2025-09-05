@@ -74,8 +74,8 @@ window.I18N.es = {
   // Pie de página (marcas permanecen en inglés)
   footer_offline: "Esta página funciona completamente sin conexión. Solo abra index.html.",
   footer_support: "Soporte:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

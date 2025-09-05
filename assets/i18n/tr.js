@@ -71,8 +71,8 @@ window.I18N.tr = {
 
   footer_offline: "Bu sayfa tamamen çevrimdışı çalışır. Sadece index.html dosyasını açın.",
   footer_support: "Destek:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

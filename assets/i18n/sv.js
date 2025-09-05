@@ -71,8 +71,8 @@ window.I18N.sv = {
 
   footer_offline: "Denna sida fungerar helt offline. Öppna bara index.html.",
   footer_support: "Support:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

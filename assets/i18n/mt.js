@@ -71,9 +71,9 @@ window.I18N.mt = {
 
   footer_offline: "Din il‑paġna taħdem kompletament offline. Iftaħ biss index.html.",
   footer_support: "Appoġġ:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 
 

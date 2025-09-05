@@ -71,8 +71,8 @@ window.I18N.cs = {
 
   footer_offline: "Tato stránka funguje zcela offline. Otevřete jen index.html.",
   footer_support: "Podpora:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

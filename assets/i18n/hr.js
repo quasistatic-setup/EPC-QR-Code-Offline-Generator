@@ -71,8 +71,8 @@ window.I18N.hr = {
 
   footer_offline: "Ova stranica radi potpuno offline. Samo otvorite index.html.",
   footer_support: "Podrška:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

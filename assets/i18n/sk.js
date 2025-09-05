@@ -71,8 +71,8 @@ window.I18N.sk = {
 
   footer_offline: "Táto stránka funguje úplne offline. Otvorte len index.html.",
   footer_support: "Podpora:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

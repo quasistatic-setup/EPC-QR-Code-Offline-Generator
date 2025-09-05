@@ -71,8 +71,8 @@ window.I18N.pl = {
 
   footer_offline: "Ta strona działa całkowicie offline. Po prostu otwórz index.html.",
   footer_support: "Wsparcie:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

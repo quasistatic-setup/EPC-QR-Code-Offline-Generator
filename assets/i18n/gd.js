@@ -71,9 +71,9 @@ window.I18N.gd = {
 
   footer_offline: "Tha an duilleag seo ag obair gu tur far‑loidhne. Fosgail dìreach index.html.",
   footer_support: "Taic:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 
 

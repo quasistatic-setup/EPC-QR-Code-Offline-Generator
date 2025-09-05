@@ -71,8 +71,8 @@ window.I18N.rm = {
 
   footer_offline: "Questa pagina funcziuna cumplainamain offline. Avra simplamain index.html.",
   footer_support: "Sustegn:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

@@ -71,8 +71,8 @@ window.I18N.et = {
 
   footer_offline: "See leht töötab täielikult võrguvabalt. Ava lihtsalt index.html.",
   footer_support: "Tugi:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

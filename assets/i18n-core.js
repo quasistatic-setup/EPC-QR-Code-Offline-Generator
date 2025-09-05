@@ -76,9 +76,8 @@ window.I18N = {
     // Footer
     footer_offline: "This page works fully offline. Just open index.html.",
     footer_support: "Support:",
-    footer_buy: "Buy me a coffee",
-    footer_kofi: "Ko-fi",
-    footer_gh: "GitHub"
+    footer_buy: "☕ Buy me a coffee",
+    footer_kofi: "❤️ Ko-fi",
+    footer_gh: "🌐 GitHub"
   }
 };
-

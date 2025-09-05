@@ -71,9 +71,9 @@ window.I18N.ga = {
 
   footer_offline: "Oibríonn an leathanach seo go hiomlán as líne. Níl le déanamh ach index.html a oscailt.",
   footer_support: "Tacaíocht:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 
 

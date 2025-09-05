@@ -71,8 +71,8 @@ window.I18N.ca = {
 
   footer_offline: "Aquesta pàgina funciona totalment fora de línia. Només cal obrir index.html.",
   footer_support: "Suport:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 

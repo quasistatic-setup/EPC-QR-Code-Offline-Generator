@@ -71,8 +71,8 @@ window.I18N.lb = {
 
   footer_offline: "Dës Säit funktionéiert komplett offline. Maach just index.html op.",
   footer_support: "Support:",
-  footer_buy: "Buy me a coffee",
-  footer_kofi: "Ko-fi",
-  footer_gh: "GitHub"
+  footer_buy: "☕ Buy me a coffee",
+  footer_kofi: "❤️ Ko-fi",
+  footer_gh: "🌐 GitHub"
 };
 
