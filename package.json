@@ -1,1 +1,0 @@
-{"name":"epc-qr-offline","version":"1.0.0","private":true,"devDependencies":{},"scripts":{"test":"node tests/sanitizeAmountValue.test.js && node tests/collectPayloadFields.test.js && node tests/ibanAndAmount.test.js"}}
