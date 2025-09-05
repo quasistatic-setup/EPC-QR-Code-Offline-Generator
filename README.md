@@ -1,5 +1,7 @@
 # EPC QR Code Offline Generator
 
+[Live Demo on GitHub Pages](https://quasistatic-setup.github.io/EPC-QR-Code-Offline-Generator/) · static, offline-capable
+
 A lightweight, fully offline EPC/SEPA QR code generator. Open `index.html` in a modern browser, fill in the payment details, and save the QR code as PNG, SVG or JPG. No server calls; everything runs locally in your browser.
 
 ## Screenshots
@@ -64,6 +66,10 @@ Note: The app works entirely offline. You can keep and use it without internet c
 - Or serve via any static server, e.g.:
   - Python: `python -m http.server 8080`
   - Node (npx): `npx serve .`
+
+## GitHub Pages
+- Live site: https://quasistatic-setup.github.io/EPC-QR-Code-Offline-Generator/
+- In the repo UI: add the link under the “About” box → click the cog icon and set “Website” to the URL above. GitHub will then show a clickable link on the repo homepage.
 
 ## Privacy
 - No data is transmitted. All inputs stay in the user's browser.
