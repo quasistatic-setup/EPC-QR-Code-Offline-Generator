@@ -11,6 +11,29 @@ carry the same version.
 
 ## [Unreleased]
 
+## [2026.08.28.1] - 2026-08-28
+
+### Fixed
+- Umlauts and other non-ASCII characters are written in the character set the
+  payload announces. The QR library defaults to ISO-8859-1, and that default was
+  never replaced, so a code declaring UTF-8 in line 3 carried Latin-1 bytes:
+  `ÄÖ` went in as `c4 d6` instead of `c3 84 c3 96`. Readers that trust the
+  announced character set saw invalid bytes, which is why some banking apps
+  refused codes that contained a special character.
+- Characters that ISO-8859-1 cannot represent are rejected with a message
+  instead of being truncated. A Polish `ł` used to arrive as `B`, silently
+  changing a recipient name.
+- The byte counter and the 331-byte limit measure the character set actually in
+  use, so the number below the form is the number that ends up in the code.
+
+### Changed
+- The character set list offers UTF-8 and ISO-8859-1 only. EPC069-12 also
+  defines ids 3 to 8, but the QR library has no encoder for those ISO-8859
+  parts; offering them relabelled the payload while still writing ISO-8859-1
+  bytes. UTF-8 covers every character those sets contain.
+- Missing translations fall back to English per string instead of per language,
+  so a locale that predates a new message no longer shows `undefined`.
+
 ## [2026.08.17.1] - 2026-08-17
 
 ### Added
@@ -46,6 +69,7 @@ First tagged version: offline EPC/SEPA QR generator with live IBAN validation,
 payload byte guard, PNG/SVG/JPG export, dark mode and optional locales. No
 release notes were recorded at the time; the commit history holds the detail.
 
-[Unreleased]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.17.1...HEAD
+[Unreleased]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.1...HEAD
+[2026.08.28.1]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.17.1...v2026.08.28.1
 [2026.08.17.1]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2025.09.05.1...v2026.08.17.1
 [2025.09.05.1]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/releases/tag/v2025.09.05.1
