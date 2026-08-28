@@ -34,6 +34,7 @@ window.I18N = {
     hint_amount_fmt: "Will be formatted to two decimals on generate.",
     live_checks: "Live checks:",
     live_ok: "OK",
+    live_charset: (chars) => `Not in the SEPA character set; many banks replace or drop them: ${chars}`,
     live_conflict: "Conflict: use either Structured reference OR Payment reference.",
     tooltip_struct: "Use RF creditor reference (ISO 11649). If you set this, leave Payment reference empty.",
     tooltip_purpose: "Standard code like GDDS (goods), SALA (salary), CHAR (charity). Optional.",

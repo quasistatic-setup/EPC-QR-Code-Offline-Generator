@@ -32,6 +32,7 @@ window.I18N.de = {
   hint_amount_fmt: "Wird beim Erzeugen auf zwei Nachkommastellen formatiert.",
   live_checks: "Live-Prüfungen:",
   live_ok: "OK",
+  live_charset: (chars) => `Nicht im SEPA-Zeichensatz; viele Banken ersetzen oder entfernen sie: ${chars}`,
   live_conflict: "Konflikt: Entweder Strukturierte Referenz ODER Verwendungszweck verwenden.",
   tooltip_struct: "RF-Kreditorenreferenz (ISO 11649) verwenden. Falls gesetzt, Verwendungszweck leer lassen.",
   tooltip_purpose: "Standardcode wie GDDS (Waren), SALA (Gehalt), CHAR (Spende). Optional.",

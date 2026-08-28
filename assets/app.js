@@ -129,6 +129,8 @@ function ensureI18N() {
       hint_amount_fmt: "Will be formatted to two decimals on generate.",
       live_checks: "Live checks:",
       live_ok: "OK",
+      live_charset: (chars) =>
+        `Not in the SEPA character set; many banks replace or drop them: ${chars}`,
       live_conflict:
         "Conflict: use either Structured reference OR Payment reference.",
       tooltip_struct:
@@ -562,6 +564,21 @@ function payloadByteLen(str, charset) {
   return new TextEncoder().encode(str).length;
 }
 
+// EPC217-08 Basic Latin Character Set - the characters a SEPA credit transfer
+// is guaranteed to carry. EPC069-12 itself allows more: its own examples read
+// "Franz Mustermaenn" (with umlaut) and "Francois D'Alsace S.A." (with cedilla),
+// and banks differ in what they convert, keep or drop. So this is a hint next
+// to the live checks, never a reason to refuse a code.
+const SEPA_BASIC_CHARS = /[A-Za-z0-9 /?:().,'+-]/;
+
+function charsOutsideSepaSet(...texts) {
+  const seen = new Set();
+  for (const text of texts) {
+    for (const c of text) if (!SEPA_BASIC_CHARS.test(c)) seen.add(c);
+  }
+  return [...seen];
+}
+
 // UTF-8 covers every character; ISO-8859-1 does not. Encoding an unsupported
 // character would silently truncate it to a different letter (a Polish "l"
 // with stroke would arrive as "B"), so refuse instead of corrupting a
@@ -881,9 +898,21 @@ function updateLiveUI() {
     structEl.classList.add("is-invalid");
 
     liveInfo.textContent = dict.live_conflict;
+    liveInfo.classList.remove("warn");
     setStatus(dict.live_conflict, false, true);
   } else {
-    liveInfo.textContent = dict.live_ok;
+    // Only the free-text fields: the others are validated against their own
+    // pattern already and cannot carry anything unexpected.
+    const outside = charsOutsideSepaSet(
+      document.getElementById("name").value,
+      unstructEl.value,
+      structEl.value,
+      document.getElementById("b2o").value
+    );
+    liveInfo.textContent = outside.length
+      ? dict.live_charset(outside.join(" "))
+      : dict.live_ok;
+    liveInfo.classList.toggle("warn", outside.length > 0);
     // Warn-Status zurücknehmen, falls er nur vom Konflikt kam
     const s = document.getElementById("status");
     if (s.classList.contains("warn")) setStatus("");
