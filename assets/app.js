@@ -209,7 +209,7 @@ function loadLocale(lang) {
   });
 }
 function detectPreferredLang() {
-  const stored = localStorage.getItem("lang");
+  const stored = store.get("lang");
   if (stored) return stored;
   const list = (
     navigator.languages && navigator.languages.length
@@ -323,7 +323,7 @@ function applyLang(lang) {
 
   // Language selector + remember
   populateLangSelect(lang);
-  localStorage.setItem("lang", lang);
+  store.set("lang", lang);
 
   // Reformat amount according to new locale rules (space thousands + localized decimal)
   const amountEl = document.getElementById("amount");
@@ -343,11 +343,32 @@ async function maybeLoadAndApply(lang) {
 // ---------- Theme ----------
 function setTheme(mode) {
   document.documentElement.setAttribute("data-theme", mode);
-  localStorage.setItem("theme", mode);
+  store.set("theme", mode);
   updateThemeButton();
 }
+// Browsers may refuse storage entirely - a blocked-cookies setting is enough.
+// An unguarded access threw inside init() and took everything after it down
+// with it, including the footer version and the language list, while the form
+// above kept working. Storage is a convenience here, never a requirement.
+const store = {
+  get(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  },
+  set(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      /* remembering the choice is optional */
+    }
+  },
+};
+
 function initTheme() {
-  const stored = localStorage.getItem("theme");
+  const stored = store.get("theme");
   if (stored) {
     setTheme(stored);
     return;
