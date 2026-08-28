@@ -11,6 +11,18 @@ carry the same version.
 
 ## [Unreleased]
 
+## [2026.08.28.3] - 2026-08-28
+
+### Added
+- The live checks name characters that are outside the SEPA Basic Latin
+  Character Set of EPC217-08 (`a-z A-Z 0-9 / - ? : ( ) . , ' +` and space), for
+  the recipient, both reference fields and the note to the originator. Banks
+  convert, keep or drop everything else at their own discretion, which is why a
+  name can arrive incomplete while the QR code is faultless.
+- This is a hint, not a block: EPC069-12 allows more than the basic set - its
+  own examples read `Franz Mustermänn` and `François D'Alsace S.A.` - and banks
+  differ in what they accept.
+
 ## [2026.08.28.2] - 2026-08-28
 
 ### Fixed
@@ -82,7 +94,8 @@ First tagged version: offline EPC/SEPA QR generator with live IBAN validation,
 payload byte guard, PNG/SVG/JPG export, dark mode and optional locales. No
 release notes were recorded at the time; the commit history holds the detail.
 
-[Unreleased]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.2...HEAD
+[Unreleased]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.3...HEAD
+[2026.08.28.3]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.2...v2026.08.28.3
 [2026.08.28.2]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.1...v2026.08.28.2
 [2026.08.28.1]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.17.1...v2026.08.28.1
 [2026.08.17.1]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2025.09.05.1...v2026.08.17.1
