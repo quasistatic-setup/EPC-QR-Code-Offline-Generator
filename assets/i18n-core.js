@@ -79,6 +79,7 @@ window.I18N = {
     footer_support: "Support:",
     footer_buy: "☕ Buy me a coffee",
     footer_kofi: "❤️ Ko-fi",
-    footer_gh: "🌐 GitHub"
+    footer_gh: "🌐 GitHub",
+    footer_version: "Version"
   }
 };

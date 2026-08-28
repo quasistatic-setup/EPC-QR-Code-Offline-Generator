@@ -255,6 +255,13 @@
         text-decoration: none;
         margin: 0 8px;
       }
+      /* The version identifies the copy in front of you; it is information,
+         not a call to action, so it stays in the muted footer colour. */
+      .footer a.version {
+        color: var(--muted);
+        display: inline-block;
+        margin-top: 6px;
+      }
       .icon {
         width: 16px;
         height: 16px;
@@ -550,6 +557,7 @@
       <br />
       <!-- Filled by app.js from APP_VERSION; identifies an offline copy. -->
       <a
+        class="version"
         href="https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/releases"
         target="_blank"
         rel="noopener"

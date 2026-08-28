@@ -178,6 +178,7 @@ function ensureI18N() {
       footer_buy: "☕ Buy me a coffee",
       footer_kofi: "❤️ Ko-fi",
       footer_gh: "🌐 GitHub",
+      footer_version: "Version",
     };
   }
 }
@@ -310,6 +311,7 @@ function applyLang(lang) {
   document.getElementById("f_buy").textContent = dict.footer_buy;
   document.getElementById("f_kofi").textContent = dict.footer_kofi;
   document.getElementById("f_gh").textContent = dict.footer_gh;
+  renderVersion();
 
   // Tooltips
   document.getElementById("qm_struct").title = dict.tooltip_struct;
@@ -1047,7 +1049,10 @@ document.getElementById("themeToggle").addEventListener("click", () => {
 // not touched by applyLang().
 function renderVersion() {
   const el = document.getElementById("f_version");
-  if (el) el.textContent = "v" + APP_VERSION;
+  // Labelled, because a bare "v2026.08.28.1" at the bottom of the page reads
+  // as just another link and gets missed - and identifying an offline copy is
+  // the whole point of showing it.
+  if (el) el.textContent = `${t().footer_version} ${APP_VERSION}`;
 }
 
 (function init() {
