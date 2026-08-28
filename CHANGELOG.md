@@ -11,6 +11,19 @@ carry the same version.
 
 ## [Unreleased]
 
+## [2026.08.28.2] - 2026-08-28
+
+### Fixed
+- The page keeps working when the browser refuses storage. `localStorage` was
+  read unguarded during start-up, so a blocked-cookies setting left the page
+  without a theme, with an empty language selector and without the footer
+  version, while the form above still worked.
+
+### Changed
+- The footer names the version instead of showing a bare `v2026.08.28.1` in
+  link blue: it now reads `Version <number>` in the muted footer colour, and
+  the label is translatable.
+
 ## [2026.08.28.1] - 2026-08-28
 
 ### Fixed
@@ -69,7 +82,8 @@ First tagged version: offline EPC/SEPA QR generator with live IBAN validation,
 payload byte guard, PNG/SVG/JPG export, dark mode and optional locales. No
 release notes were recorded at the time; the commit history holds the detail.
 
-[Unreleased]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.1...HEAD
+[Unreleased]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.2...HEAD
+[2026.08.28.2]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.1...v2026.08.28.2
 [2026.08.28.1]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.17.1...v2026.08.28.1
 [2026.08.17.1]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2025.09.05.1...v2026.08.17.1
 [2025.09.05.1]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/releases/tag/v2025.09.05.1
