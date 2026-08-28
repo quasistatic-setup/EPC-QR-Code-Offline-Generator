@@ -445,14 +445,12 @@
                   <span class="title">Character set</span>
                 </div>
                 <select id="charset">
+                  <!-- EPC069-12 also defines ids 3 to 8, but the QR library
+                       has no encoder for those ISO-8859 parts. Offering them
+                       would only relabel the payload while still writing
+                       ISO-8859-1 bytes. UTF-8 covers all of them anyway. -->
                   <option value="1" selected>1 (UTF-8)</option>
                   <option value="2">2 (ISO-8859-1)</option>
-                  <option value="3">3 (ISO-8859-2)</option>
-                  <option value="4">4 (ISO-8859-4)</option>
-                  <option value="5">5 (ISO-8859-5)</option>
-                  <option value="6">6 (ISO-8859-7)</option>
-                  <option value="7">7 (ISO-8859-10)</option>
-                  <option value="8">8 (ISO-8859-15)</option>
                 </select>
               </label>
             </div>

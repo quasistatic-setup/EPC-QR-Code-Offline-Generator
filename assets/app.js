@@ -169,6 +169,8 @@ function ensureI18N() {
       err_amount_min: "Invalid amount: at least 0.01 EUR.",
       err_len: (b) =>
         `Text too long: payload exceeds 331 bytes (${b}). Please shorten.`,
+      err_charset: (chars) =>
+        `These characters cannot be encoded in ISO-8859-1: ${chars}. Choose UTF-8 as the character set.`,
       err_qrlib:
         "QR library not loaded. Ensure assets/qrcode.js is loaded before app.js.",
       footer_offline: "This page works fully offline. Just open index.html.",
@@ -181,7 +183,11 @@ function ensureI18N() {
 }
 function t() {
   ensureI18N();
-  return window.I18N[LANG] || window.I18N.en;
+  const dict = window.I18N[LANG];
+  if (!dict || dict === window.I18N.en) return window.I18N.en;
+  // Fall back to English per key, not per locale: a translation that predates
+  // a newly added string must not put "undefined" in front of the user.
+  return { ...window.I18N.en, ...dict };
 }
 
 function loadLocale(lang) {
@@ -520,8 +526,27 @@ function formatIbanUIKeepCaret(inputEl) {
   inputEl.setSelectionRange(formattedCaret, formattedCaret);
 }
 
-function byteLenUtf8(str) {
+// EPC069-12 charset ids mapped to the byte encoders qrcode-generator ships
+// with. Its built-in default truncates each code unit to one byte, which is
+// ISO-8859-1 - so UTF-8 has to be selected explicitly, and only these two are
+// offered because the library has no encoder for the other ISO-8859 parts.
+const CHARSET_ENCODERS = { 1: "UTF-8", 2: "default" };
+
+// Byte length in the selected charset, because the 331-byte cap of the
+// standard counts the bytes that actually end up in the QR code.
+function payloadByteLen(str, charset) {
+  if (String(charset) === "2") return str.length; // one byte per code unit
   return new TextEncoder().encode(str).length;
+}
+
+// UTF-8 covers every character; ISO-8859-1 does not. Encoding an unsupported
+// character would silently truncate it to a different letter (a Polish "l"
+// with stroke would arrive as "B"), so refuse instead of corrupting a
+// recipient name.
+function assertEncodable(payload, charset) {
+  if (String(charset) !== "2") return;
+  const bad = [...new Set([...payload])].filter((c) => c.codePointAt(0) > 0xff);
+  if (bad.length) throw new Error(t().err_charset(bad.join(" ")));
 }
 
 function collectPayloadFields(v, opts = {}) {
@@ -565,8 +590,8 @@ function buildPayloadDraft() {
   return lines.join("\n").replace(/(\n)+$/, "");
 }
 
-function ensureLimits(payload) {
-  const bytes = byteLenUtf8(payload);
+function ensureLimits(payload, charset) {
+  const bytes = payloadByteLen(payload, charset);
   if (bytes > 331) throw new Error(t().err_len(bytes));
   return bytes;
 }
@@ -580,8 +605,18 @@ function setDownloadEnabled(enabled) {
   document.getElementById("saveSVG").disabled = !enabled;
   document.getElementById("saveJPG").disabled = !enabled;
 }
-function renderQR(text) {
+function renderQR(text, charset) {
   if (typeof qrcode === "undefined") throw new Error(t().err_qrlib);
+
+  // Line 3 of the payload announces the charset, so the bytes written into
+  // the code have to match it. Without this the library keeps its ISO-8859-1
+  // default while the payload claims UTF-8, and a reader that trusts the
+  // announcement sees invalid bytes as soon as an umlaut appears.
+  const encoder =
+    qrcode.stringToBytesFuncs[CHARSET_ENCODERS[String(charset)] || "UTF-8"];
+  if (!encoder) throw new Error(t().err_qrlib);
+  qrcode.stringToBytes = encoder;
+
   const box = document.getElementById("qrcanvas");
   box.innerHTML = "";
 
@@ -834,7 +869,10 @@ function updateLiveUI() {
   // --- Live-Bytezähler anhand Draft-Payload ---
   try {
     const draft = buildPayloadDraft();
-    const bytes = byteLenUtf8(draft);
+    const bytes = payloadByteLen(
+      draft,
+      document.getElementById("charset").value
+    );
     document.getElementById("bytes").textContent = `${bytes} / 331`;
   } catch {
     document.getElementById("bytes").textContent = "–";
@@ -883,9 +921,10 @@ document.getElementById("gen").addEventListener("click", () => {
       throw new Error(dict.err_bic);
 
     const payload = buildPayload(v);
-    const bytes = ensureLimits(payload);
+    assertEncodable(payload, v.charset);
+    const bytes = ensureLimits(payload, v.charset);
 
-    renderQR(payload);
+    renderQR(payload, v.charset);
     showPayload(payload, bytes);
     setStatus(dict.status_ok, true);
   } catch (err) {

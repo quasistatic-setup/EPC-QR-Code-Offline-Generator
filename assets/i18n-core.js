@@ -71,6 +71,7 @@ window.I18N = {
     err_bic: "Invalid BIC format.",
     err_amount_min: "Invalid amount: at least 0.01 EUR.",
     err_len: (bytes) => `Text too long: payload exceeds 331 bytes (${bytes}). Please shorten.`,
+    err_charset: (chars) => `These characters cannot be encoded in ISO-8859-1: ${chars}. Choose UTF-8 as the character set.`,
     err_qrlib: "QR library not loaded. Ensure assets/qrcode.min.js exists and is loaded before app.js.",
 
     // Footer
