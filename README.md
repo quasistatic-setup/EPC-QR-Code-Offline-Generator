@@ -46,6 +46,7 @@ Note: The app works entirely offline. You can keep and use it without internet c
 - Payment reference vs. Structured reference: mutually exclusive (use one or the other)
 - Purpose code: 1-4 alphanumeric characters (e.g., GDDS, SALA, CHAR)
 - BIC: only needed for special/edge cases outside standard SEPA usage
+- SEPA Instant: a classic EPC QR code cannot request or force an SCT Inst payment. After scanning, the banking app may offer an instant transfer if the payment and participating banks are eligible.
 - EPC payload: maximum length 331 bytes; live counter is shown
 
 ## Export
