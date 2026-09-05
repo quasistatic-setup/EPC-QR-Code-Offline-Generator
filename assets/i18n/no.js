@@ -15,6 +15,7 @@ window.I18N.no = {
   l_version: "Versjon",
   l_charset: "Tegnkoding",
   h_limit: "Maksimal nyttelast 331 byte. Ingen ekstra linjeskift etter siste felt.",
+  h_instant: "Straksbetalinger: denne klassiske EPC-QR-koden kan ikke be om en SEPA-straksbetaling. Etter skanning kan bankappen din likevel tilby det hvis bankene som er involvert støtter det.",
   btn_gen: "Generer QR‑kode",
   btn_ex: "Eksempeldata",
 

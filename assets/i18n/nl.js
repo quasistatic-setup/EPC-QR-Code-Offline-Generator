@@ -15,6 +15,7 @@ window.I18N.nl = {
   l_version: "Versie",
   l_charset: "Tekenset",
   h_limit: "Maximale payload 331 bytes. Geen extra regeleinde na het laatste veld.",
+  h_instant: "Instantoverboekingen: deze klassieke EPC-QR-code kan geen SEPA-instantoverboeking aanvragen. Na het scannen kan je bankapp er alsnog een aanbieden als de betrokken banken dit ondersteunen.",
   btn_gen: "QR‑code genereren",
   btn_ex: "Voorbeeldgegevens",
 

@@ -15,6 +15,7 @@ window.I18N.da = {
   l_version: "Version",
   l_charset: "Tegnsæt",
   h_limit: "Maksimal payload 331 byte. Ingen ekstra linjeskift efter sidste felt.",
+  h_instant: "Straksoverførsler: denne klassiske EPC-QR-kode kan ikke anmode om en SEPA-straksoverførsel. Efter scanning kan din bankapp alligevel tilbyde en, hvis de involverede banker understøtter det.",
   btn_gen: "Generér QR‑kode",
   btn_ex: "Eksempeldata",
 

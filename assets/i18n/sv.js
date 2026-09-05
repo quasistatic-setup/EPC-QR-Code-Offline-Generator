@@ -15,6 +15,7 @@ window.I18N.sv = {
   l_version: "Version",
   l_charset: "Teckenuppsättning",
   h_limit: "Maximal nyttolast 331 byte. Ingen extra radbrytning efter sista fältet.",
+  h_instant: "Direktbetalningar: den här klassiska EPC-QR-koden kan inte begära en SEPA-direktbetalning. Efter skanning kan din bankapp ändå erbjuda en om de berörda bankerna stöder det.",
   btn_gen: "Generera QR‑kod",
   btn_ex: "Exempeldata",
 

@@ -15,6 +15,7 @@ window.I18N.lv = {
   l_version: "Versija",
   l_charset: "Rakstzīmju kopa",
   h_limit: "Maksimālais apjoms 331 baits. Nav papildu rindas pēc pēdējā lauka.",
+  h_instant: "Zibmaksājumi: šis klasiskais EPC QR kods nevar pieprasīt SEPA zibmaksājumu. Pēc skenēšanas jūsu bankas lietotne to tomēr var piedāvāt, ja iesaistītās bankas to atbalsta.",
   btn_gen: "Ģenerēt QR kodu",
   btn_ex: "Piemēra dati",
 

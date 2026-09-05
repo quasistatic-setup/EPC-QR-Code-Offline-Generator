@@ -15,6 +15,7 @@ window.I18N.pl = {
   l_version: "Wersja",
   l_charset: "Zestaw znaków",
   h_limit: "Maksymalny ładunek 331 bajtów. Bez dodatkowego znaku nowej linii po ostatnim polu.",
+  h_instant: "Przelewy natychmiastowe: ten klasyczny kod QR EPC nie może zlecić przelewu natychmiastowego SEPA. Po zeskanowaniu aplikacja bankowa może go mimo to zaproponować, jeśli obsługują go banki biorące udział w transakcji.",
   btn_gen: "Generuj kod QR",
   btn_ex: "Dane przykładowe",
 

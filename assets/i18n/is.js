@@ -15,6 +15,7 @@ window.I18N.is = {
   l_version: "Útgáfa",
   l_charset: "Stafatafla",
   h_limit: "Hámarks gagnafarmur 331 bæti. Engin auka línuskil eftir síðasta reit.",
+  h_instant: "Straxmillifærslur: þessi klassíski EPC-QR-kóði getur ekki beðið um SEPA-straxmillifærslu. Eftir skönnun getur bankaappið þitt samt boðið hana ef bankarnir sem eiga hlut að máli styðja hana.",
   btn_gen: "Búa til QR‑kóða",
   btn_ex: "Sýnidæmi",
 

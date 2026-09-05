@@ -15,6 +15,7 @@ window.I18N.cs = {
   l_version: "Verze",
   l_charset: "Znaková sada",
   h_limit: "Maximální velikost dat 331 bajtů. Žádný dodatečný odřádkování po posledním poli.",
+  h_instant: "Okamžité platby: tento klasický EPC QR kód nemůže vyžádat okamžitou platbu SEPA. Po naskenování ji vaše bankovní aplikace může přesto nabídnout, pokud ji zúčastněné banky podporují.",
   btn_gen: "Vygenerovat QR kód",
   btn_ex: "Ukázková data",
 

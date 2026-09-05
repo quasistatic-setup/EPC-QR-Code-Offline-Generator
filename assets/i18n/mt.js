@@ -15,6 +15,7 @@ window.I18N.mt = {
   l_version: "Verżjoni",
   l_charset: "Sett ta’ karattri",
   h_limit: "Tagħbija massima 331 bytes. L‑ebda ksur ta’ linja żejjed wara l‑-aħħar kamp.",
+  h_instant: "Trasferimenti istantanji: dan il-kodiċi QR EPC klassiku ma jistax jitlob trasferiment istantanju SEPA. Wara l-iskanjar, l-app tal-bank tiegħek xorta tista' toffrih jekk il-banek involuti jappoġġjawh.",
   btn_gen: "Ġenera kodiċi QR",
   btn_ex: "Data ta’ eżempju",
 

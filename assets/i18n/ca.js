@@ -15,6 +15,7 @@ window.I18N.ca = {
   l_version: "Versió",
   l_charset: "Joc de caràcters",
   h_limit: "Càrrega màxima 331 bytes. Sense salt de línia addicional després de l’últim camp.",
+  h_instant: "Transferències immediates: aquest codi QR EPC clàssic no pot sol·licitar una transferència immediata SEPA. Després d'escanejar-lo, l'aplicació del teu banc encara te la pot oferir si els bancs implicats l'admeten.",
   btn_gen: "Generar codi QR",
   btn_ex: "Dades d’exemple",
 

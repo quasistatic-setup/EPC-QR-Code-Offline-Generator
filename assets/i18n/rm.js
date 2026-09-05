@@ -15,6 +15,7 @@ window.I18N.rm = {
   l_version: "Versiun",
   l_charset: "Set da segns",
   h_limit: "Pais da datas maximal 331 bytes. Nagina lingia nova supplementara suenter l’ultim champ.",
+  h_instant: "Pajaments immediats: quest code QR EPC classic na po betg dumandar in pajament immediat SEPA. Suenter la scannaziun po tia app da banca al purschir tuttina, sche las bancas participadas al sustegnan.",
   btn_gen: "Generar il code QR",
   btn_ex: "Datas d’exempel",
 

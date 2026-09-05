@@ -15,6 +15,7 @@ window.I18N.es = {
   l_version: "Versión",
   l_charset: "Conjunto de caracteres",
   h_limit: "Carga máxima 331 bytes. Sin salto de línea adicional tras el último campo.",
+  h_instant: "Transferencias inmediatas: este código QR EPC clásico no puede solicitar una transferencia inmediata SEPA. Tras escanearlo, tu aplicación bancaria puede ofrecerla igualmente si los bancos implicados la admiten.",
   btn_gen: "Generar código QR",
   btn_ex: "Datos de ejemplo",
 

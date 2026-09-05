@@ -11,6 +11,14 @@ carry the same version.
 
 ## [Unreleased]
 
+### Added
+- The form names a limit the format itself has: a classic EPC QR code cannot
+  request SEPA Instant. Line 4 of the payload is always `SCT`, and signalling
+  an instant transfer needs the separate MSCT standard EPC024-22, which is a
+  different payment framework rather than a flag that could be added here.
+  After scanning, a banking app may still offer an instant transfer when the
+  banks involved support it. The field overview in the README says the same.
+
 ## [2026.08.28.3] - 2026-08-28
 
 ### Added
