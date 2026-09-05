@@ -4,7 +4,7 @@
 // Released version, CalVer YYYY.MM.DD.N. This is the single source of truth:
 // the release workflow refuses to publish a tag that disagrees with it, and the
 // footer shows it so a downloaded offline copy can be matched to a release.
-const APP_VERSION = "2026.08.28.3";
+const APP_VERSION = "2026.09.05.1";
 
 let LANG = "en";
 let hasQR = false;

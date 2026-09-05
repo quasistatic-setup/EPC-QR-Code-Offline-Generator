@@ -11,6 +11,8 @@ carry the same version.
 
 ## [Unreleased]
 
+## [2026.09.05.1] - 2026-09-05
+
 ### Added
 - The form names a limit the format itself has: a classic EPC QR code cannot
   request SEPA Instant. Line 4 of the payload is always `SCT`, and signalling
@@ -102,7 +104,8 @@ First tagged version: offline EPC/SEPA QR generator with live IBAN validation,
 payload byte guard, PNG/SVG/JPG export, dark mode and optional locales. No
 release notes were recorded at the time; the commit history holds the detail.
 
-[Unreleased]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.3...HEAD
+[Unreleased]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.09.05.1...HEAD
+[2026.09.05.1]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.3...v2026.09.05.1
 [2026.08.28.3]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.2...v2026.08.28.3
 [2026.08.28.2]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.28.1...v2026.08.28.2
 [2026.08.28.1]: https://github.com/quasistatic-setup/EPC-QR-Code-Offline-Generator/compare/v2026.08.17.1...v2026.08.28.1
