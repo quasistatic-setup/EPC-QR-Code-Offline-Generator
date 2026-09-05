@@ -15,6 +15,7 @@ window.I18N.sk = {
   l_version: "Verzia",
   l_charset: "Znaková sada",
   h_limit: "Maximálna veľkosť 331 bajtov. Bez ďalšieho odseku po poslednom poli.",
+  h_instant: "Okamžité platby: tento klasický EPC QR kód nedokáže vyžiadať okamžitú platbu SEPA. Po naskenovaní ju vaša banková aplikácia môže napriek tomu ponúknuť, ak ju zúčastnené banky podporujú.",
   btn_gen: "Vygenerovať QR kód",
   btn_ex: "Ukážkové údaje",
 

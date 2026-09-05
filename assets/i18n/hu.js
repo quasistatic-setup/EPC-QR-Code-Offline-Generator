@@ -15,6 +15,7 @@ window.I18N.hu = {
   l_version: "Verzió",
   l_charset: "Karakterkészlet",
   h_limit: "Maximális terhelés 331 bájt. Nincs extra sortörés az utolsó mező után.",
+  h_instant: "Azonnali átutalás: ez a klasszikus EPC QR-kód nem tud SEPA azonnali átutalást kérni. Beolvasás után a bankalkalmazása ettől függetlenül felajánlhatja, ha az érintett bankok támogatják.",
   btn_gen: "QR‑kód generálása",
   btn_ex: "Példa adatok",
 

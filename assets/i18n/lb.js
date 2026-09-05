@@ -15,6 +15,7 @@ window.I18N.lb = {
   l_version: "Versioun",
   l_charset: "Zeechesaz",
   h_limit: "Maximal Notzlaascht 331 Bytes. Keen zousätzlechen Zeilenëmbriech nom leschte Feld.",
+  h_instant: "Instant-Iwwerweisungen: dëse klassesche EPC-QR-Code kann keng SEPA-Instant-Iwwerweisung ufroen. No dem Scannen kann Är Bankapp se trotzdem ubidden, wann déi bedeelegt Banken se ënnerstëtzen.",
   btn_gen: "QR‑Code generéieren",
   btn_ex: "Beispieldonnéeën",
 

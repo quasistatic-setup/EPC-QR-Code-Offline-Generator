@@ -15,6 +15,7 @@ window.I18N.cy = {
   l_version: "Fersiwn",
   l_charset: "Set nodau",
   h_limit: "Llwyth mwyaf 331 beit. Dim torlinell ychwanegol ar ôl y maes olaf.",
+  h_instant: "Trosglwyddiadau ar unwaith: ni all y cod QR EPC clasurol hwn ofyn am drosglwyddiad SEPA ar unwaith. Ar ôl sganio, gall ap eich banc ei gynnig beth bynnag os yw'r banciau dan sylw yn ei gefnogi.",
   btn_gen: "Cynhyrchu côd QR",
   btn_ex: "Data enghreifftiol",
 

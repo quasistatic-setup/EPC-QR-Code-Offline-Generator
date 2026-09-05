@@ -116,6 +116,8 @@ function ensureI18N() {
       l_charset: "Character set",
       h_limit:
         "Maximum payload 331 bytes. No extra line break after the last field.",
+      h_instant:
+        "Instant transfers: this classic EPC QR code cannot request SEPA Instant. After scanning, your banking app may still offer one if the banks involved support it.",
       btn_gen: "Generate QR code",
       btn_ex: "Example data",
       save_as: "Save as",
@@ -274,6 +276,7 @@ function applyLang(lang) {
   document.querySelector("#l_version .title").textContent = dict.l_version;
   document.querySelector("#l_charset .title").textContent = dict.l_charset;
   document.getElementById("h_limit").textContent = dict.h_limit;
+  document.getElementById("h_instant").textContent = dict.h_instant;
 
   // Buttons / Save-as texts
   document.getElementById("gen").textContent = dict.btn_gen;

@@ -15,6 +15,7 @@ window.I18N.fi = {
   l_version: "Versio",
   l_charset: "Merkistö",
   h_limit: "Enimmäiskuorma 331 tavua. Ei ylimääräistä rivinvaihtoa viimeisen kentän jälkeen.",
+  h_instant: "Pikasiirrot: tämä klassinen EPC-QR-koodi ei voi pyytää SEPA-pikasiirtoa. Skannauksen jälkeen pankkisovelluksesi voi silti tarjota sitä, jos mukana olevat pankit tukevat sitä.",
   btn_gen: "Luo QR‑koodi",
   btn_ex: "Esimerkkitiedot",
 

@@ -469,6 +469,18 @@
           </div>
         </details>
 
+        <!-- EPC069-12 has no field for instant payments: line 4 of the
+             payload is always "SCT". Signalling SCT Inst needs the separate
+             MSCT standard EPC024-22, which is a different payment framework,
+             not a flag that could be added here. Since instant transfer is
+             what people now expect of a bank, the limit is named instead of
+             left to be discovered after scanning. Text comes from i18n. -->
+        <div class="hint" id="h_instant">
+          Instant transfers: this classic EPC QR code cannot request SEPA
+          Instant. After scanning, your banking app may still offer one if the
+          banks involved support it.
+        </div>
+
         <div class="actions">
           <button type="button" class="primary" id="gen">
             Generate QR code

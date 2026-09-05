@@ -15,6 +15,7 @@ window.I18N.it = {
   l_version: "Versione",
   l_charset: "Set di caratteri",
   h_limit: "Payload massimo 331 byte. Nessun ritorno a capo aggiuntivo dopo l’ultimo campo.",
+  h_instant: "Bonifici istantanei: questo QR code EPC classico non può richiedere un bonifico istantaneo SEPA. Dopo la scansione, l'app della tua banca può comunque proporlo se le banche coinvolte lo supportano.",
   btn_gen: "Genera codice QR",
   btn_ex: "Dati di esempio",
 

@@ -17,6 +17,7 @@ window.I18N = {
     l_version: "Version",
     l_charset: "Character set",
     h_limit: "Maximum payload 331 bytes. No extra line break after the last field.",
+    h_instant: "Instant transfers: this classic EPC QR code cannot request SEPA Instant. After scanning, your banking app may still offer one if the banks involved support it.",
     btn_gen: "Generate QR code",
     btn_ex: "Example data",
 

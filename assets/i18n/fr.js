@@ -15,6 +15,7 @@ window.I18N.fr = {
   l_version: "Version",
   l_charset: "Jeu de caractères",
   h_limit: "Charge utile maximale 331 octets. Aucun saut de ligne supplémentaire après le dernier champ.",
+  h_instant: "Virements instantanés : ce QR code EPC classique ne peut pas demander un virement instantané SEPA. Après le scan, votre application bancaire peut tout de même le proposer si les banques concernées le prennent en charge.",
   btn_gen: "Générer le code QR",
   btn_ex: "Données d’exemple",
 

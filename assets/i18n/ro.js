@@ -15,6 +15,7 @@ window.I18N.ro = {
   l_version: "Versiune",
   l_charset: "Set de caractere",
   h_limit: "Încărcătură maximă 331 byți. Fără linie nouă suplimentară după ultimul câmp.",
+  h_instant: "Plăți instant: acest cod QR EPC clasic nu poate solicita o plată instant SEPA. După scanare, aplicația băncii dumneavoastră o poate oferi totuși, dacă băncile implicate o acceptă.",
   btn_gen: "Generează cod QR",
   btn_ex: "Date exemplu",
 

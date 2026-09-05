@@ -15,6 +15,7 @@ window.I18N.ga = {
   l_version: "Leagan",
   l_charset: "Tacar carachtar",
   h_limit: "Ualach uasta 331 beart. Gan briseadh líne breise tar éis an réimse deireanach.",
+  h_instant: "Aistrithe láithreacha: ní féidir leis an gcód QR EPC clasaiceach seo aistriú láithreach SEPA a iarraidh. Tar éis scanadh, féadfaidh aip do bhainc é a thairiscint mar sin féin má thacaíonn na bainc lena mbaineann leis.",
   btn_gen: "Gineadh cód QR",
   btn_ex: "Sonraí samplacha",
 

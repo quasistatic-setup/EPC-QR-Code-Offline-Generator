@@ -15,6 +15,7 @@ window.I18N.et = {
   l_version: "Versioon",
   l_charset: "Kodeering",
   h_limit: "Maksimaalne koormus 331 baiti. Viimase välja järel ei ole lisareavahetust.",
+  h_instant: "Välkmaksed: see klassikaline EPC QR-kood ei saa taotleda SEPA välkmakset. Pärast skannimist võib teie pangarakendus seda siiski pakkuda, kui kaasatud pangad seda toetavad.",
   btn_gen: "Genereeri QR‑kood",
   btn_ex: "Näidisandmed",
 

@@ -15,6 +15,7 @@ window.I18N.sl = {
   l_version: "Različica",
   l_charset: "Nabor znakov",
   h_limit: "Največja obremenitev 331 bajtov. Brez dodatnega preloma vrstice po zadnjem polju.",
+  h_instant: "Takojšnja plačila: ta klasična koda EPC QR ne more zahtevati takojšnjega plačila SEPA. Po skeniranju ga lahko vaša bančna aplikacija vseeno ponudi, če ga vpletene banke podpirajo.",
   btn_gen: "Ustvari QR kodo",
   btn_ex: "Vzorčni podatki",
 

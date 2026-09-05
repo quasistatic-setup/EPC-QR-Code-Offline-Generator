@@ -15,6 +15,7 @@ window.I18N.de = {
   l_version: "Version",
   l_charset: "Zeichensatz",
   h_limit: "Maximale Nutzlast 331 Bytes. Letztes Feld ohne zusätzlichen Zeilenumbruch.",
+  h_instant: "Echtzeitüberweisung: Dieser klassische EPC-QR-Code kann keine SEPA-Echtzeitüberweisung anfordern. Nach dem Scannen kann Ihre Banking-App sie trotzdem anbieten, wenn die beteiligten Banken sie unterstützen.",
   btn_gen: "QR-Code erzeugen",
   btn_ex: "Beispieldaten",
 

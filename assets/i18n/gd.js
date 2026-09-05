@@ -15,6 +15,7 @@ window.I18N.gd = {
   l_version: "Tionndadh",
   l_charset: "Seata charactaran",
   h_limit: "Uallach as motha 331 bytes. Gun bhriseadh loidhne a bharrachd às dèidh an achaidh mu dheireadh.",
+  h_instant: "Gluasadan sa bhad: chan urrainn dhan chòd QR EPC chlasaigeach seo gluasad SEPA sa bhad iarraidh. Às dèidh sganaidh, faodaidh aplacaid a' bhanca agad a thabhann fhathast ma tha na bancaichean an sàs ga chur an gnìomh.",
   btn_gen: "Gineadh còd QR",
   btn_ex: "Dàta eisimpleir",
 

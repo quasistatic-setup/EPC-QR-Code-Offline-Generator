@@ -15,6 +15,7 @@ window.I18N.tr = {
   l_version: "Sürüm",
   l_charset: "Karakter kümesi",
   h_limit: "Azami yük 331 bayt. Son alanın ardından ek satır sonu yok.",
+  h_instant: "Anlık transferler: bu klasik EPC QR kodu SEPA anlık transferi talep edemez. Tarama sonrasında, ilgili bankalar destekliyorsa bankacılık uygulamanız yine de bunu sunabilir.",
   btn_gen: "QR kod oluştur",
   btn_ex: "Örnek veriler",
 

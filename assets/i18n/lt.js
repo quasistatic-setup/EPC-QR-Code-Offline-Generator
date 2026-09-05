@@ -15,6 +15,7 @@ window.I18N.lt = {
   l_version: "Versija",
   l_charset: "Koduotė",
   h_limit: "Maksimali apkrova 331 baitas. Jokio papildomo naujos eilutės ženklo po paskutinio lauko.",
+  h_instant: "Momentiniai pervedimai: šis klasikinis EPC QR kodas negali užsakyti SEPA momentinio pervedimo. Nuskaičiusi jį jūsų banko programėlė vis tiek gali jį pasiūlyti, jei dalyvaujantys bankai jį palaiko.",
   btn_gen: "Generuoti QR kodą",
   btn_ex: "Pavyzdiniai duomenys",
 

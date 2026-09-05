@@ -15,6 +15,7 @@ window.I18N.hr = {
   l_version: "Verzija",
   l_charset: "Skup znakova",
   h_limit: "Maksimalni payload 331 bajt. Nema dodatnog prijeloma reda nakon posljednjeg polja.",
+  h_instant: "Instant plaćanja: ovaj klasični EPC QR kod ne može zatražiti SEPA instant plaćanje. Nakon skeniranja vaša bankovna aplikacija ga svejedno može ponuditi ako ga uključene banke podržavaju.",
   btn_gen: "Generiraj QR kod",
   btn_ex: "Primjerni podaci",
 
