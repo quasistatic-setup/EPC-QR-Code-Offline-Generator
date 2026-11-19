@@ -4,7 +4,7 @@ window.I18N.rm = {
   advanced: "Avanzà (opziunal)",
   l_name: "Reschadent (num)",
   l_iban: "IBAN",
-  l_amount: "Import en EUR",
+  l_amount: "Import en EUR (opziunal)",
   l_unstruct: "Referenza da pajament",
   l_struct: "Referenza structurada",
   h_struct: "Utilisar mo, sche nagina referenza da pajament (text liber) è dada.",

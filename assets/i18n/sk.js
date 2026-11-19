@@ -4,7 +4,7 @@ window.I18N.sk = {
   advanced: "Pokročilé (voliteľné)",
   l_name: "Príjemca (meno)",
   l_iban: "IBAN",
-  l_amount: "Suma v EUR",
+  l_amount: "Suma v EUR (voliteľné)",
   l_unstruct: "Platobná referencia",
   l_struct: "Štruktúrovaný referenčný údaj",
   h_struct: "Použite iba v prípade, že nie je uvedená platobná referencia (voľný text).",

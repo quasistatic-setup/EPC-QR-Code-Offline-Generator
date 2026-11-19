@@ -4,7 +4,7 @@ window.I18N.lv = {
   advanced: "Papildu (neobligāti)",
   l_name: "Saņēmējs (vārds)",
   l_iban: "IBAN",
-  l_amount: "Summa EUR",
+  l_amount: "Summa EUR (neobligāti)",
   l_unstruct: "Maksājuma atsauce",
   l_struct: "Strukturēta atsauce",
   h_struct: "Izmantojiet tikai, ja nav norādīta maksājuma atsauce (brīvs teksts).",

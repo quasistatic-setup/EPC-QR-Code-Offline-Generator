@@ -4,7 +4,7 @@ window.I18N.gd = {
   advanced: "Adhartach (roghainneil)",
   l_name: "Buannachdair (ainm)",
   l_iban: "IBAN",
-  l_amount: "Suim ann an EUR",
+  l_amount: "Suim ann an EUR (roghainneil)",
   l_unstruct: "Iomradh pàighidh",
   l_struct: "Iomradh structaraichte",
   h_struct: "Cleachd a‑mhàin mura h‑eil iomradh pàighidh (teacsa saor) air a thoirt seachad.",

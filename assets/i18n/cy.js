@@ -4,7 +4,7 @@ window.I18N.cy = {
   advanced: "Uwch (dewisol)",
   l_name: "Derbynnydd (enw)",
   l_iban: "IBAN",
-  l_amount: "Swm yn EUR",
+  l_amount: "Swm yn EUR (dewisol)",
   l_unstruct: "Cyfeirnod talu",
   l_struct: "Cyfeirnod strwythuredig",
   h_struct: "Defnyddiwch yn unig os nad oes cyfeirnod talu (testun rhydd).",

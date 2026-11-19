@@ -4,7 +4,7 @@ window.I18N.lb = {
   advanced: "Erweidert (optional)",
   l_name: "Beneficiaire (Numm)",
   l_iban: "IBAN",
-  l_amount: "Betrag an EUR",
+  l_amount: "Betrag an EUR (optional)",
   l_unstruct: "Bezuelungsreferenz",
   l_struct: "Strukturéiert Referenz",
   h_struct: "Nëmme benotzen, wann et keng Bezuelungsreferenz (fräien Text) gëtt.",

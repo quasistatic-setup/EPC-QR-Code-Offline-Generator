@@ -4,7 +4,7 @@ window.I18N.ca = {
   advanced: "Avançat (opcional)",
   l_name: "Beneficiari (nom)",
   l_iban: "IBAN",
-  l_amount: "Import en EUR",
+  l_amount: "Import en EUR (opcional)",
   l_unstruct: "Referència de pagament",
   l_struct: "Referència estructurada",
   h_struct: "Utilitzeu només si no s’indica cap referència de pagament (text lliure).",

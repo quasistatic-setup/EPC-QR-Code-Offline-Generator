@@ -4,7 +4,7 @@ window.I18N.fr = {
   advanced: "Avancé (optionnel)",
   l_name: "Bénéficiaire (nom)",
   l_iban: "IBAN",
-  l_amount: "Montant en EUR",
+  l_amount: "Montant en EUR (optionnel)",
   l_unstruct: "Référence de paiement",
   l_struct: "Référence structurée",
   h_struct: "À utiliser uniquement si aucune référence de paiement (texte libre) n’est fournie.",

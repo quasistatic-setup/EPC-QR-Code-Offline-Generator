@@ -4,7 +4,7 @@ window.I18N.da = {
   advanced: "Avanceret (valgfrit)",
   l_name: "Modtager (navn)",
   l_iban: "IBAN",
-  l_amount: "Beløb i EUR",
+  l_amount: "Beløb i EUR (valgfrit)",
   l_unstruct: "Betalingsreference",
   l_struct: "Struktureret reference",
   h_struct: "Brug kun hvis der ikke angives betalingsreference (fri tekst).",

@@ -4,7 +4,7 @@ window.I18N.es = {
   advanced: "Avanzado (opcional)",
   l_name: "Beneficiario (nombre)",
   l_iban: "IBAN",
-  l_amount: "Importe en EUR",
+  l_amount: "Importe en EUR (opcional)",
   l_unstruct: "Referencia de pago",
   l_struct: "Referencia estructurada",
   h_struct: "Usar solo si no se proporciona referencia de pago (texto libre).",

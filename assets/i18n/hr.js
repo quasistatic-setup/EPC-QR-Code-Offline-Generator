@@ -4,7 +4,7 @@ window.I18N.hr = {
   advanced: "Napredno (neobavezno)",
   l_name: "Primatelj (ime)",
   l_iban: "IBAN",
-  l_amount: "Iznos u EUR",
+  l_amount: "Iznos u EUR (neobavezno)",
   l_unstruct: "Poziv na broj / opis plaćanja",
   l_struct: "Strukturirana referenca",
   h_struct: "Koristite samo ako nije naveden opis plaćanja (slobodan tekst).",

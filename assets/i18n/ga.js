@@ -4,7 +4,7 @@ window.I18N.ga = {
   advanced: "Casta (roghnach)",
   l_name: "Faighteoir (ainm)",
   l_iban: "IBAN",
-  l_amount: "Suim in EUR",
+  l_amount: "Suim in EUR (roghnach)",
   l_unstruct: "Tagairt íocaíochta",
   l_struct: "Tagairt struchtúrtha",
   h_struct: "Úsáid ach amháin mura bhfuil tagairt íocaíochta (téacs saor) curtha ar fáil.",
