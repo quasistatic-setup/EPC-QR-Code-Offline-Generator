@@ -4,7 +4,7 @@ window.I18N.is = {
   advanced: "Ítarlegt (valfrjálst)",
   l_name: "Viðtakandi (nafn)",
   l_iban: "IBAN",
-  l_amount: "Upphæð í EUR",
+  l_amount: "Upphæð í EUR (valfrjálst)",
   l_unstruct: "Greiðsluviðmiðun",
   l_struct: "Skipulögð tilvísun",
   h_struct: "Nota aðeins ef engin greiðsluviðmiðun (frjáls texti) er gefin.",

@@ -4,7 +4,7 @@ window.I18N.sl = {
   advanced: "Napredno (neobvezno)",
   l_name: "Prejemnik (ime)",
   l_iban: "IBAN",
-  l_amount: "Znesek v EUR",
+  l_amount: "Znesek v EUR (neobvezno)",
   l_unstruct: "Namen plačila",
   l_struct: "Strukturirana sklicna številka",
   h_struct: "Uporabite le, če ni naveden namen plačila (prosto besedilo).",

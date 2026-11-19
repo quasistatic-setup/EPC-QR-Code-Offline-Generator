@@ -4,7 +4,7 @@ window.I18N.it = {
   advanced: "Avanzate (opzionale)",
   l_name: "Beneficiario (nome)",
   l_iban: "IBAN",
-  l_amount: "Importo in EUR",
+  l_amount: "Importo in EUR (opzionale)",
   l_unstruct: "Causale di pagamento",
   l_struct: "Riferimento strutturato",
   h_struct: "Usare solo se non è fornita una causale di pagamento (testo libero).",

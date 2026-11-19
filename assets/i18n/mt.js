@@ -4,7 +4,7 @@ window.I18N.mt = {
   advanced: "Avvanzat (mhux obbligatorju)",
   l_name: "Benefiċjarju (isem)",
   l_iban: "IBAN",
-  l_amount: "L‑ammont f’EUR",
+  l_amount: "L‑ammont f’EUR (mhux obbligatorju)",
   l_unstruct: "Referenza tal‑ħlas",
   l_struct: "Referenza strutturata",
   h_struct: "Uża biss jekk ma tingħatax referenza tal‑ħlas (test liberu).",

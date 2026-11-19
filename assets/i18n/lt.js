@@ -4,7 +4,7 @@ window.I18N.lt = {
   advanced: "Išplėstiniai (pasirinktinai)",
   l_name: "Gavėjas (vardas)",
   l_iban: "IBAN",
-  l_amount: "Suma EUR",
+  l_amount: "Suma EUR (pasirinktinai)",
   l_unstruct: "Mokėjimo paskirtis",
   l_struct: "Struktūrinė nuoroda",
   h_struct: "Naudokite tik jei nenurodyta mokėjimo paskirtis (laisvas tekstas).",

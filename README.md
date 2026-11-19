@@ -18,9 +18,9 @@ Advanced section expanded:
   with `connect-src 'none'` makes the browser enforce this, so payment data cannot
   be sent anywhere even if a script were injected
 - IBAN validation: live check and readable spacing
-- Fields: Recipient, IBAN, Amount (EUR), Payment reference OR Structured reference (RF, ISO 11649), Purpose code, BIC (rarely needed), Note to originator
+- Fields: Recipient, IBAN, Amount (EUR, optional), Payment reference OR Structured reference (RF, ISO 11649), Purpose code, BIC (rarely needed), Note to originator
 - EPC payload guard: live byte counter and limit check (max 331 bytes)
-- Export: save QR as PNG, SVG, or JPG
+- Export: save QR as PNG, SVG, or JPG; PNG with the payment details printed next to the code; the details as text (TXT or clipboard)
 - UX niceties: dark/light theme, tooltips, example data, EPC payload details
 - Multilingual: English base plus optional locales in `assets/i18n/`
 
@@ -42,16 +42,22 @@ Note: The app works entirely offline. You can keep and use it without internet c
 ## Fields & Rules (Overview)
 - Recipient: free text (required)
 - IBAN: validated using Mod97; input with or without spaces
-- Amount: decimal EUR value; formatted to two decimals on generate
+- Amount: optional. Leave it empty and the payer enters the amount in their banking app. When set: 0.01 to 999 999 999.99 EUR, formatted to two decimals on generate
 - Payment reference vs. Structured reference: mutually exclusive (use one or the other)
+- Structured reference: max. 35 characters; an RF creditor reference (ISO 11649) is checked against its check digits, spaces in it are removed
 - Purpose code: 1-4 alphanumeric characters (e.g., GDDS, SALA, CHAR)
 - BIC: only needed for special/edge cases outside standard SEPA usage
+- Version: 002 (default) makes the BIC optional; 001 requires a BIC, as EPC069-12 prescribes
+- BIC for SEPA countries outside the EEA (AD, AL, CH, GB, GI, MC, MD, ME, MK, RS, SM, VA): required in every version; the IBAN check names it
 - SEPA Instant: a classic EPC QR code cannot request or force an SCT Inst payment. After scanning, the banking app may offer an instant transfer if the payment and participating banks are eligible.
 - EPC payload: maximum length 331 bytes; live counter is shown
 
 ## Export
 - PNG and JPG: 300x300 px (ECL=M)
 - SVG: true vector output, suitable for print
+- All QR exports include the four-module white margin (quiet zone) that QR scanners need
+- PNG with details: the code and the same payment data as text, side by side. EPC069-12 is written for codes shown next to their data in plain text, so the payer can compare what their app fills in
+- Text: the payment details as plain text, to save as TXT or copy into an invoice
 
 ## Internationalization (i18n)
 - Base strings: `assets/i18n-core.js` (English)

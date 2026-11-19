@@ -4,7 +4,7 @@ window.I18N.fi = {
   advanced: "Lisäasetukset (valinnainen)",
   l_name: "Saaja (nimi)",
   l_iban: "IBAN",
-  l_amount: "Määrä euroina",
+  l_amount: "Määrä euroina (valinnainen)",
   l_unstruct: "Maksun viite",
   l_struct: "Rakenteinen viite",
   h_struct: "Käytä vain, jos maksun viitettä (vapaateksti) ei anneta.",

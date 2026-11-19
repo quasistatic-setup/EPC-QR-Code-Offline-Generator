@@ -4,7 +4,7 @@ window.I18N.cs = {
   advanced: "Pokročilé (volitelné)",
   l_name: "Příjemce (jméno)",
   l_iban: "IBAN",
-  l_amount: "Částka v EUR",
+  l_amount: "Částka v EUR (volitelné)",
   l_unstruct: "Variabilní zpráva/účel platby",
   l_struct: "Strukturovaný reference",
   h_struct: "Použijte pouze, pokud není uvedena zpráva pro příjemce (volný text).",

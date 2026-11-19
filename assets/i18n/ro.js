@@ -4,7 +4,7 @@ window.I18N.ro = {
   advanced: "Avansat (opțional)",
   l_name: "Beneficiar (nume)",
   l_iban: "IBAN",
-  l_amount: "Sumă în EUR",
+  l_amount: "Sumă în EUR (opțional)",
   l_unstruct: "Referință plată",
   l_struct: "Referință structurată",
   h_struct: "Folosiți doar dacă nu exista o referință de plată (text liber).",

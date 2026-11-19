@@ -4,7 +4,7 @@ window.I18N.et = {
   advanced: "Täpsemad (valikuline)",
   l_name: "Saaja (nimi)",
   l_iban: "IBAN",
-  l_amount: "Summa eurodes",
+  l_amount: "Summa eurodes (valikuline)",
   l_unstruct: "Makse selgitus",
   l_struct: "Struktureeritud viide",
   h_struct: "Kasuta ainult siis, kui makse selgitust (vaba tekst) ei ole.",

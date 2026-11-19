@@ -4,7 +4,7 @@ window.I18N.sv = {
   advanced: "Avancerat (valfritt)",
   l_name: "Mottagare (namn)",
   l_iban: "IBAN",
-  l_amount: "Belopp i EUR",
+  l_amount: "Belopp i EUR (valfritt)",
   l_unstruct: "Betalningsreferens",
   l_struct: "Strukturerad referens",
   h_struct: "Använd endast om ingen betalningsreferens (fri text) anges.",

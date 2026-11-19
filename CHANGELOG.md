@@ -11,6 +11,42 @@ carry the same version.
 
 ## [Unreleased]
 
+### Fixed
+- The amount is optional again, as EPC069-12 defines it. An empty field was
+  read as `0`, formatted to `0.00` and then refused as below the 0.01 EUR
+  minimum, so no code without an amount could be made. Leaving the field
+  empty now writes an empty amount line, and the payer enters the amount in
+  their banking app. Leaving the field also no longer fills in `0.00`.
+- Version 001 codes without a BIC are no longer produced. EPC069-12 makes the
+  BIC mandatory in 001 and optional only in 002, so 002 is now the default and
+  choosing 001 without a BIC is refused with a hint.
+- IBANs from SEPA countries outside the EEA (Andorra, Albania, Switzerland,
+  United Kingdom, Gibraltar, Monaco, Moldova, Montenegro, North Macedonia,
+  Serbia, San Marino, Vatican City) need a BIC in every version: EPC069-12
+  keeps it mandatory there. The IBAN check says so as you type, generating
+  without a BIC is refused, and the Advanced section opens to show the field.
+- QR codes now have the four-module white margin (quiet zone) that ISO/IEC
+  18004 requires, in the preview and in every export. Without it a code
+  printed on a coloured background or cropped tightly may not be found.
+
+### Added
+- "Save as" offers "PNG with details" (the code with the payment data as text
+  beside it), "Text (TXT)" and "Copy as text". EPC069-12 is written for codes
+  shown next to the same data in plain text, so the payer can compare what
+  their app pre-fills; these exports give that text for an invoice. They use
+  the data of the code on screen, never fields edited after generating.
+- The amount is checked against the upper bound of the standard,
+  999 999 999.99 EUR, in whole cents so rounding cannot cross either bound.
+- An RF creditor reference (ISO 11649) in the structured reference is checked
+  against its check digits, and spaces from its printed form are removed.
+  Other creditor references are passed through, since the standard says RF
+  "may" be used; the RF-only input pattern is gone.
+
+### Changed
+- The amount label says "(optional)" in every language.
+- The conflict message for both references set uses the translated live-check
+  text instead of a German/English special case.
+
 ## [2026.09.05.1] - 2026-09-05
 
 ### Added

@@ -4,7 +4,7 @@ window.I18N.pl = {
   advanced: "Zaawansowane (opcjonalne)",
   l_name: "Odbiorca (nazwa)",
   l_iban: "IBAN",
-  l_amount: "Kwota w EUR",
+  l_amount: "Kwota w EUR (opcjonalnie)",
   l_unstruct: "Tytuł płatności",
   l_struct: "Ustrukturyzowany identyfikator",
   h_struct: "Używaj tylko, gdy nie podano tytułu płatności (tekst dowolny).",

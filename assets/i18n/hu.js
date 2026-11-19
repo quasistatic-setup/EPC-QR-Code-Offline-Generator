@@ -4,7 +4,7 @@ window.I18N.hu = {
   advanced: "Speciális (opcionális)",
   l_name: "Kedvezményezett (név)",
   l_iban: "IBAN",
-  l_amount: "Összeg EUR‑ban",
+  l_amount: "Összeg EUR‑ban (opcionális)",
   l_unstruct: "Fizetési közlemény",
   l_struct: "Strukturált hivatkozás",
   h_struct: "Csak akkor használja, ha nincs megadva fizetési közlemény (szabad szöveg).",

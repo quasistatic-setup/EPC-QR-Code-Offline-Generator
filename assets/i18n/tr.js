@@ -4,7 +4,7 @@ window.I18N.tr = {
   advanced: "Gelişmiş (isteğe bağlı)",
   l_name: "Alıcı (ad)",
   l_iban: "IBAN",
-  l_amount: "EUR cinsinden tutar",
+  l_amount: "EUR cinsinden tutar (isteğe bağlı)",
   l_unstruct: "Ödeme açıklaması",
   l_struct: "Yapılandırılmış referans",
   h_struct: "Ödeme açıklaması (serbest metin) girilmediyse kullanın.",
